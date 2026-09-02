@@ -1,0 +1,26 @@
+{
+  "id": "terminal",
+  "displayName": "Terminal",
+  "description": "Classic CRT terminal aesthetic — near-black background, phosphor green text, cyan accents, monospace throughout.",
+
+  "styles": {
+    "colors": {
+      "background": "#0a0a0a",
+      "foreground": "#33ff33",
+      "muted": "#008800",
+      "accent": "#00ffff",
+      "border": "#005500",
+      "surface": "#141414"
+    },
+    "fonts": {
+      "heading": "var(--font-jetbrains-mono)",
+      "body": "var(--font-jetbrains-mono)"
+    }
+  },
+
+  "translations": {
+    "Intro": {
+      "tagline": "$ full-stack engineer --scale=hundreds_of_thousands"
+    }
+  }
+}
