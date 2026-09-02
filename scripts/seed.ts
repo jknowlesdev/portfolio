@@ -1,68 +1,29 @@
 /**
- * Seed script — syncs themes/*.json (partial overrides) → Postgres themes table.
+ * Seed script — demonstrates the end-to-end DB interaction (schema → push →
+ * seed → query) with a single idempotent upsert against the demo_table
+ * scaffold.
  *
- * Defaults live in code (globals.css + lib/theme/default-*.ts), so theme JSON
- * files contain only the fields that differ from those defaults. The DB row
- * for a theme IS the diff-from-defaults. Merging with defaults happens at
- * request time in i18n/request.ts and the ThemeProvider.
- *
- * Run via `pnpm db:seed`.
+ * `onConflictDoUpdate` makes re-running safe: first run inserts, subsequent
+ * runs update the same row. Adapt when a DB-backed feature (e.g., dev log
+ * entries, admin fixtures) needs real seeding. Run via `pnpm db:seed`.
  */
 
-import { readdir, readFile } from 'node:fs/promises';
-import { join } from 'node:path';
-import { db } from '@/lib/db';
-import { themes } from '@/db/schema';
-import { themeOverrideSchema } from '@/lib/theme/theme.zod';
+import { db } from '@/db';
+import { demoTable } from '@/db/schema';
 
-const themesDir = join(process.cwd(), 'themes');
+const demoLabel = 'Placeholder row for db demonstration purposes.';
 
 async function main() {
-  console.log(`Seeding themes from ${themesDir}`);
+  const result = await db
+    .insert(demoTable)
+    .values({ id: 1, label: demoLabel })
+    .onConflictDoUpdate({
+      target: demoTable.id,
+      set: { label: demoLabel },
+    })
+    .returning();
 
-  const files = await readdir(themesDir);
-  const themeFiles = files.filter(
-    (f) => f.startsWith('theme-') && f.endsWith('.json'),
-  );
-
-  if (themeFiles.length === 0) {
-    console.warn('No theme-*.json files found. Nothing to seed.');
-    return;
-  }
-
-  for (const file of themeFiles) {
-    const rawJson = await readFile(join(themesDir, file), 'utf-8');
-    const parsed = JSON.parse(rawJson);
-
-    // Validate as a partial override (id + displayName required, rest optional).
-    const override = themeOverrideSchema.parse(parsed);
-
-    await db
-      .insert(themes)
-      .values({
-        id: override.id,
-        displayName: override.displayName,
-        description: override.description,
-        styles: override.styles ?? {},
-        translations: override.translations ?? {},
-        flags: override.flags ?? {},
-      })
-      .onConflictDoUpdate({
-        target: themes.id,
-        set: {
-          displayName: override.displayName,
-          description: override.description,
-          styles: override.styles ?? {},
-          translations: override.translations ?? {},
-          flags: override.flags ?? {},
-          updatedAt: new Date(),
-        },
-      });
-
-    console.log(`  ✓ ${file} → theme "${override.id}"`);
-  }
-
-  console.log(`Seeded ${themeFiles.length} theme(s).`);
+  console.log(`Seed completed: ${JSON.stringify(result)}`);
 }
 
 main().catch((error) => {
