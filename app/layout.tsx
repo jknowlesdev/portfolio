@@ -14,6 +14,7 @@ import { db } from '@/lib/db';
 import { themes } from '@/db/schema';
 import { ThemeProvider } from '@/lib/theme/context';
 import { defaultFlags } from '@/lib/theme/default-flags';
+import type { ThemeFlags } from '@/lib/theme/theme.zod';
 import './globals.css';
 
 // Default theme fonts.
@@ -69,9 +70,12 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
   const messages = await getMessages();
   const override = await loadThemeOverride(themeId);
 
+  // Cast to ThemeFlags: deepmerge widens the type to reflect that override.flags
+  // has optional fields, but defaultFlags provides every required field, so the
+  // merged result IS a complete ThemeFlags shape at runtime.
   const flags = deepmerge(defaultFlags, override.flags, {
     arrayMerge: (_dest, src) => src,
-  });
+  }) as ThemeFlags;
 
   return (
     <html
