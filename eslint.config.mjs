@@ -8,7 +8,7 @@ const eslintConfig = defineConfig([
   {
     rules: {
       quotes: ['warn', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-      'jsx-quotes': ['warn', 'prefer-double'],
+      'jsx-quotes': ['warn', 'prefer-single'],
     },
   },
   // Override default ignores of eslint-config-next.

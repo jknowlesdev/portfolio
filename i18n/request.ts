@@ -1,51 +1,39 @@
 /**
  * next-intl request config.
  *
- * For each request, determines the active theme id and returns the translations
- * that next-intl exposes to Server + Client Components via useTranslations().
+ * For each request, resolves the active theme id and returns the merged
+ * translations that next-intl exposes to Server + Client Components via
+ * useTranslations().
  *
  * Translation lookup:
- *   1. Fetch the theme row from DB (contains partial translation overrides)
- *   2. Deep-merge overrides on top of defaultTranslations
- *   3. Return the merged messages to next-intl
+ *   1. Resolve the active theme id (from the `x-theme-id` header)
+ *   2. Fetch the theme's translation override from the DB
+ *   3. Deep-merge overrides on top of defaultTranslations
+ *   4. Return merged messages plus a real language locale (e.g. 'en') so
+ *      next-intl's built-in date / number / plural formatters keep working
  *
- * Theme selection: reads `?theme=X` from the URL search params. Unknown or
- * missing theme id falls back to defaults (no DB row needed).
+ * Locale is intentionally kept separate from theme id: theme ids are not
+ * valid language tags and would break those formatters. Theme id flows
+ * through the ThemeProvider chain instead (resolveThemeId → layout →
+ * context → hooks).
  */
 
 import { getRequestConfig } from 'next-intl/server';
-import { headers } from 'next/headers';
-import { eq } from 'drizzle-orm';
 import deepmerge from 'deepmerge';
-import { db } from '@/lib/db';
-import { themes } from '@/db/schema';
 import { defaultTranslations } from '@/lib/theme/default-translations';
+import { resolveThemeId } from '@/lib/theme/server/resolve-theme-id';
+import { loadThemeOverride } from '@/lib/theme/server/theme-loader';
 
 export default getRequestConfig(async () => {
   const themeId = await resolveThemeId();
-  const overrides = await loadTranslationsOverride(themeId);
+  const override = await loadThemeOverride(themeId);
 
-  const messages = deepmerge(defaultTranslations, overrides, {
+  const messages = deepmerge(defaultTranslations, override.translations, {
     arrayMerge: (_dest, src) => src,
   });
 
   return {
-    locale: themeId,
+    locale: 'en',
     messages,
   };
 });
-
-async function resolveThemeId(): Promise<string> {
-  const headerList = await headers();
-  const url = headerList.get('x-url') ?? headerList.get('referer') ?? '';
-  const match = url.match(/[?&]theme=([^&]+)/);
-  return match ? decodeURIComponent(match[1]) : 'default';
-}
-
-async function loadTranslationsOverride(themeId: string) {
-  if (themeId === 'default') {
-    return {};
-  }
-  const [row] = await db.select().from(themes).where(eq(themes.id, themeId));
-  return row?.translations ?? {};
-}
