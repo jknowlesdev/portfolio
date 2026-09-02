@@ -1,0 +1,26 @@
+{
+  "id": "newspaper",
+  "displayName": "Newspaper",
+  "description": "Editorial broadsheet aesthetic — cream paper, warm ink, masthead red, high-contrast serif type.",
+
+  "styles": {
+    "colors": {
+      "background": "#faf8f4",
+      "foreground": "#1a1815",
+      "muted": "#6b6560",
+      "accent": "#b91c1c",
+      "border": "#d4cfc0",
+      "surface": "#f5f2eb"
+    },
+    "fonts": {
+      "heading": "var(--font-playfair-display)",
+      "body": "var(--font-source-serif)"
+    }
+  },
+
+  "translations": {
+    "Intro": {
+      "tagline": "Software engineering, in print."
+    }
+  }
+}

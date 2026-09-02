@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
+/*
+ * Default theme baseline. Per-theme overrides are applied by setting the same
+ * custom properties on <html>, letting the CSS cascade handle the fallback.
+ * A theme only needs to declare properties it wants to change.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* colors — shadcn-style neutral palette */
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+  --color-muted: #737373;
+  --color-accent: #3b82f6;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-surface: #fafafa;
+
+  /* fonts — Geist Sans loaded via next/font/google in app/layout.tsx */
+  --font-heading: var(--font-geist-sans);
+  --font-body: var(--font-geist-sans);
+
+  /* text (font sizes) */
+  --text-heading-1: clamp(2.5rem, 6vw, 4rem);
+  --text-heading-2: clamp(1.75rem, 4vw, 2.5rem);
+  --text-heading-3: clamp(1.25rem, 2.5vw, 1.5rem);
+  --text-body: clamp(1rem, 1.25vw, 1.125rem);
+  --text-small: 0.875rem;
+
+  /* spacing */
+  --spacing-intro-y: clamp(3rem, 8vw, 6rem);
+  --spacing-container-max: 44rem;
+  --spacing-section-gap: clamp(2.5rem, 5vw, 4rem);
+  --spacing-widget-gap: clamp(1rem, 2vw, 1.5rem);
+  --spacing-widget-padding: clamp(1rem, 2.5vw, 1.5rem);
 }
 
+/* Bind custom properties into Tailwind v4's @theme namespace so utilities work. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-border: var(--color-border);
+  --color-surface: var(--color-surface);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
 }
