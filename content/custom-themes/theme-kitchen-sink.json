@@ -1,0 +1,26 @@
+{
+  "id": "kitchen-sink",
+  "displayName": "Kitchen Sink",
+  "description": "Every widget on. Feature showcase for the theme system.",
+  "favicon": "⚙️",
+
+  "translations": {
+    "Intro": {
+      "tagline": "The Kitchen Sink: where every valve is tunable and the plumbing is on full display."
+    }
+  },
+
+  "flags": {
+    "widgets": {
+      "geometric": true,
+      "scrollReveal": true,
+      "cursorTrail": true,
+      "dropcap": true,
+      "newsticker": true,
+      "classifieds": true,
+      "commandPrompt": true,
+      "typewriterIntro": true,
+      "asciiSkills": true
+    }
+  }
+}

@@ -2,6 +2,7 @@
   "id": "newspaper",
   "displayName": "Newspaper",
   "description": "Editorial broadsheet aesthetic — cream paper, warm ink, masthead red, high-contrast serif type.",
+  "favicon": "📰",
 
   "styles": {
     "colors": {
@@ -20,7 +21,15 @@
 
   "translations": {
     "Intro": {
-      "tagline": "Software engineering, in print."
+      "tagline": "Software engineering: News Edition. Reliable delivery, careful editing, coverage that scales."
+    }
+  },
+
+  "flags": {
+    "widgets": {
+      "dropcap": true,
+      "newsticker": true,
+      "classifieds": true
     }
   }
 }

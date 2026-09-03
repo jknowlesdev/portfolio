@@ -2,6 +2,7 @@
   "id": "terminal",
   "displayName": "Terminal",
   "description": "Classic CRT terminal aesthetic — near-black background, phosphor green text, cyan accents, monospace throughout.",
+  "favicon": "💻",
 
   "styles": {
     "colors": {
@@ -20,7 +21,15 @@
 
   "translations": {
     "Intro": {
-      "tagline": "$ full-stack engineer --scale=hundreds_of_thousands"
+      "tagline": "$ software-engineer --core=frontend-architecture --branching=fullstack"
+    }
+  },
+
+  "flags": {
+    "widgets": {
+      "commandPrompt": true,
+      "typewriterIntro": true,
+      "asciiSkills": true
     }
   }
 }
