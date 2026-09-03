@@ -28,6 +28,7 @@ export const themeSchema = z.object({
   id: z.string().min(1),
   displayName: z.string().min(1),
   description: z.string().optional(),
+  favicon: z.string().min(1),   // emoji character rendered as SVG data URL favicon
 
   styles: z.object({
     colors: stringMap,       // hex, rgba, or any CSS color string
@@ -43,6 +44,7 @@ export const themeSchema = z.object({
     Navigation: translationSection,
     Stats: translationSection,
     Footer: translationSection,
+    Customization: translationSection,
   }),
 
   flags: z.object({
@@ -53,6 +55,22 @@ export const themeSchema = z.object({
       widgetsDefaultExpanded: z.boolean(),
       showThemeSwitcher: z.boolean(),
       showViewConfig: z.boolean(),
+    }),
+    widgets: z.object({
+      // Default look-and-feel
+      geometric: z.boolean(),          // interactive shape composition
+      scrollReveal: z.boolean(),       // scroll-triggered fade/slide animations
+      cursorTrail: z.boolean(),        // subtle cursor effect
+
+      // Newspaper look-and-feel
+      dropcap: z.boolean(),            // ornate first-letter + pull-quote reveal
+      newsticker: z.boolean(),         // rotating headline ticker
+      classifieds: z.boolean(),        // stylized classified-ad contact block
+
+      // Terminal look-and-feel
+      commandPrompt: z.boolean(),      // interactive prompt (input + output log)
+      typewriterIntro: z.boolean(),    // typewriter text reveal for the intro
+      asciiSkills: z.boolean(),        // skills displayed as ASCII bar chart
     }),
   }),
 });
@@ -69,6 +87,7 @@ export const themeOverrideSchema = z.object({
   id: z.string().min(1),
   displayName: z.string().min(1),
   description: z.string().optional(),
+  favicon: z.string().min(1).optional(),
 
   styles: z.object({
     colors: stringMap.optional(),
@@ -84,6 +103,7 @@ export const themeOverrideSchema = z.object({
     Navigation: translationSection.optional(),
     Stats: translationSection.optional(),
     Footer: translationSection.optional(),
+    Customization: translationSection.optional(),
   }).partial().optional(),
 
   flags: z.object({
@@ -94,6 +114,22 @@ export const themeOverrideSchema = z.object({
       widgetsDefaultExpanded: z.boolean().optional(),
       showThemeSwitcher: z.boolean().optional(),
       showViewConfig: z.boolean().optional(),
+    }).partial().optional(),
+    widgets: z.object({
+      // Default look-and-feel
+      geometric: z.boolean().optional(),
+      scrollReveal: z.boolean().optional(),
+      cursorTrail: z.boolean().optional(),
+
+      // Newspaper look-and-feel
+      dropcap: z.boolean().optional(),
+      newsticker: z.boolean().optional(),
+      classifieds: z.boolean().optional(),
+
+      // Terminal look-and-feel
+      commandPrompt: z.boolean().optional(),
+      typewriterIntro: z.boolean().optional(),
+      asciiSkills: z.boolean().optional(),
     }).partial().optional(),
   }).partial().optional(),
 });

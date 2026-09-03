@@ -8,7 +8,7 @@ import type { ThemeTranslations } from './theme.zod';
 export const defaultTranslations: ThemeTranslations = {
   Intro: {
     name: 'Jason Knowles',
-    role: 'Full-Stack Software Engineer',
+    role: 'Senior Software Engineer',
     location: 'Boston area',
     tagline: 'Shipping clean, scalable code for 8+ years. Demonstrates config-driven, multi-tenant architecture.',
     contactCta: 'Contact',
@@ -37,5 +37,13 @@ export const defaultTranslations: ThemeTranslations = {
   },
   Footer: {
     privacyNote: 'Only counts total visits and downloads. No cookies, no personal data, no tracking across visits.',
+  },
+  Customization: {
+    toggleLabel: 'Customize',
+    toggleAriaLabel: 'Toggle customization mode panel',
+    panelTitle: 'Customization mode',
+    panelDescription: 'Toggle features on and off to see how this theme is built. Each option maps to a value in the theme JSON at content/custom-themes/theme-{id}.json.',
+    resetButton: 'Reset to theme defaults',
+    closeButton: 'Close',
   },
 };

@@ -26,13 +26,14 @@ const fileSuffix = '.json';
  */
 export async function loadThemeOverride(themeId: string) {
   if (themeId === 'default') {
-    return { styles: {}, flags: {}, translations: {} };
+    return { styles: {}, flags: {}, translations: {}, favicon: undefined };
   }
   const override = await readThemeFile(themeId);
   return {
     styles: override?.styles ?? {},
     flags: override?.flags ?? {},
     translations: override?.translations ?? {},
+    favicon: override?.favicon,
   };
 }
 
