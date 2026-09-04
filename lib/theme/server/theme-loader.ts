@@ -9,13 +9,22 @@
  * (layout, i18n config, /api/themes routes) do not need to know where the
  * data lives. If the source ever moves to a DB, only this module changes.
  *
- * Results are cached in module scope for the lifetime of the server process.
- * Themes are file-based and only change on deploy, so cache-forever is safe.
+ * Caching: module-scope Map, shared across ALL users, tabs, and sessions
+ * on a given server process. Themes are not user-specific, so sharing is
+ * correct and desirable. Skipped in dev for live JSON edits; cached in prod
+ * (themes only change on deploy).
+ *
+ * Next phase: migrate theme storage from JSON files to the DB (Neon +
+ * Drizzle already scaffolded) to unlock live edits, admin UI, and REST
+ * endpoints. Caching would likely need shorter cache windows (or
+ * invalidation on writes), since themes could then change at runtime.
  */
 
 import 'server-only';
 import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+
+import { isDev } from '@/lib/env';
 import {
   themeOverrideSchema,
   type ThemeFlagsOverride,
@@ -28,6 +37,8 @@ import {
 const themesDir = join(process.cwd(), 'content', 'custom-themes');
 const filePrefix = 'theme-';
 const fileSuffix = '.json';
+
+console.info(`[theme-loader] module init - NODE_ENV: ${process.env.NODE_ENV}`);
 
 type LoadedOverride = {
   styles: ThemeStylesOverride;
@@ -46,8 +57,11 @@ const cachedOverrides = new Map<string, LoadedOverride>();
  * (including a favicon) even when the URL carries a bad theme id.
  */
 export async function loadThemeOverride(themeId: string): Promise<LoadedOverride> {
-  // Cache in all envs. Uncomment below to skip cache in dev (reflects JSON edits without pnpm dev restart).
-  // if (process.env.NODE_ENV !== 'production') cachedOverrides.delete(themeId);
+  // Skip cache in dev so JSON edits reflect on next request without a pnpm dev restart.
+  // In prod, themes only change on deploy, so server-side caching for this use case is safe and fast.
+  if (isDev) {
+    cachedOverrides.delete(themeId);
+  }
   const cached = cachedOverrides.get(themeId);
   if (cached) {
     return { ...cached, metadata: { fromCached: true } };
@@ -71,8 +85,11 @@ export async function loadThemeOverride(themeId: string): Promise<LoadedOverride
  * (lower first); ties broken alphabetically by displayName.
  */
 export async function listThemes(): Promise<ThemeMetadata[]> {
-  // Cache in all envs. Uncomment below to skip cache in dev (reflects JSON edits without pnpm dev restart).
-  // if (process.env.NODE_ENV !== 'production') cachedThemesList = null;
+  // Skip cache in dev so JSON edits reflect on next request without a pnpm dev restart.
+  // In prod, themes only change on deploy, so server-side caching for this use case is safe and fast.
+  if (isDev) {
+    cachedThemesList = null;
+  }
   if (cachedThemesList) {
     return cachedThemesList;
   }

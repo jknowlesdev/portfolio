@@ -19,6 +19,8 @@
 
 import { createContext, useContext, useEffect } from 'react';
 import type { ReactNode } from 'react';
+
+import { isDev } from '@/lib/env';
 import type { ThemeStylesOverride, ThemeFlags } from './theme.zod';
 import { applyStyleOverrides, clearStyleOverrides } from './style-utils';
 
@@ -41,7 +43,10 @@ type ThemeProviderProps = {
 
 export function ThemeProvider({ themeId, styles, flags, metadata, children }: ThemeProviderProps) {
   useEffect(() => {
-    // console.info(`[ThemeProvider] theme: ${themeId}, fromCached: ${metadata.fromCached}`);
+    // Dev-only visibility for theme switching. Kept out of prod so visitors do not see internals in their console.
+    if (isDev) {
+      console.info(`[ThemeProvider] theme: ${themeId}, fromCached: ${metadata.fromCached}`);
+    }
     clearStyleOverrides();
     applyStyleOverrides(styles);
   }, [themeId, styles, metadata]);
