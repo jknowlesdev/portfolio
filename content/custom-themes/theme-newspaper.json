@@ -3,6 +3,7 @@
   "displayName": "Newspaper",
   "description": "Editorial broadsheet aesthetic — cream paper, warm ink, masthead red, high-contrast serif type.",
   "favicon": "📰",
+  "order": 2,
 
   "styles": {
     "colors": {

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /*
  * Default theme baseline. Per-theme overrides are applied by setting the same
@@ -41,12 +41,31 @@
   --color-accent: var(--color-accent);
   --color-border: var(--color-border);
   --color-surface: var(--color-surface);
+
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
+
+  --text-heading-1: var(--text-heading-1);
+  --text-heading-2: var(--text-heading-2);
+  --text-heading-3: var(--text-heading-3);
+  --text-body: var(--text-body);
+  --text-small: var(--text-small);
+
+  --spacing-intro-y: var(--spacing-intro-y);
+  --spacing-container-max: var(--spacing-container-max);
+  --spacing-section-gap: var(--spacing-section-gap);
+  --spacing-widget-gap: var(--spacing-widget-gap);
+  --spacing-widget-padding: var(--spacing-widget-padding);
 }
 
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-body);
+html.Portfolio {
+  body.portfolio-body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  button {
+    cursor: pointer;
+  }
 }

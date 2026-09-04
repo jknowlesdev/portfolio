@@ -1,0 +1,11 @@
+{
+  "id": "default",
+  "displayName": "Default",
+  "description": "Clean modern baseline — neutral palette, sans-serif type.",
+  "favicon": "📖",
+  "order": 1,
+
+  "styles": {},
+  "translations": {},
+  "flags": {}
+}

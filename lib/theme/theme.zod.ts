@@ -29,6 +29,7 @@ export const themeSchema = z.object({
   displayName: z.string().min(1),
   description: z.string().optional(),
   favicon: z.string().min(1),   // emoji character rendered as SVG data URL favicon
+  order: z.number().int(),       // sort order (lower first)
 
   styles: z.object({
     colors: stringMap,       // hex, rgba, or any CSS color string
@@ -38,13 +39,14 @@ export const themeSchema = z.object({
   }),
 
   translations: z.object({
-    Intro: translationSection,
-    Sections: translationSection,
-    Widgets: translationSection,
-    Navigation: translationSection,
-    Stats: translationSection,
-    Footer: translationSection,
+    Aria: translationSection,
     Customization: translationSection,
+    Footer: translationSection,
+    Intro: translationSection,
+    Navigation: translationSection,
+    Sections: translationSection,
+    Stats: translationSection,
+    Widgets: translationSection,
   }),
 
   flags: z.object({
@@ -88,6 +90,7 @@ export const themeOverrideSchema = z.object({
   displayName: z.string().min(1),
   description: z.string().optional(),
   favicon: z.string().min(1).optional(),
+  order: z.number().int().optional(),
 
   styles: z.object({
     colors: stringMap.optional(),
@@ -97,13 +100,14 @@ export const themeOverrideSchema = z.object({
   }).partial().optional(),
 
   translations: z.object({
-    Intro: translationSection.optional(),
-    Sections: translationSection.optional(),
-    Widgets: translationSection.optional(),
-    Navigation: translationSection.optional(),
-    Stats: translationSection.optional(),
-    Footer: translationSection.optional(),
+    Aria: translationSection.optional(),
     Customization: translationSection.optional(),
+    Footer: translationSection.optional(),
+    Intro: translationSection.optional(),
+    Navigation: translationSection.optional(),
+    Sections: translationSection.optional(),
+    Stats: translationSection.optional(),
+    Widgets: translationSection.optional(),
   }).partial().optional(),
 
   flags: z.object({
@@ -149,3 +153,12 @@ export type ThemeFlags = Theme['flags'];
 export type ThemeStylesOverride = NonNullable<ThemeOverride['styles']>;
 export type ThemeTranslationsOverride = NonNullable<ThemeOverride['translations']>;
 export type ThemeFlagsOverride = NonNullable<ThemeOverride['flags']>;
+
+// Top-level metadata subset — used by the theme switcher UI and listThemes().
+export type ThemeMetadata = {
+  id: string;
+  displayName: string;
+  description?: string;
+  favicon?: string;
+  order?: number;
+};

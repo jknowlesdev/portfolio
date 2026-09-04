@@ -3,12 +3,13 @@
   "displayName": "Terminal",
   "description": "Classic CRT terminal aesthetic — near-black background, phosphor green text, cyan accents, monospace throughout.",
   "favicon": "💻",
+  "order": 3,
 
   "styles": {
     "colors": {
       "background": "#0a0a0a",
       "foreground": "#33ff33",
-      "muted": "#008800",
+      "muted": "#00b800",
       "accent": "#00ffff",
       "border": "#005500",
       "surface": "#141414"

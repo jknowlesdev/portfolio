@@ -2,17 +2,16 @@ import type { Metadata } from 'next';
 import { getMessages } from 'next-intl/server';
 import deepmerge from 'deepmerge';
 
-import { loadThemeOverride } from '@/lib/theme/server/theme-loader';
+import { listThemes, loadThemeOverride } from '@/lib/theme/server/theme-loader';
 import { resolveThemeId } from '@/lib/theme/server/resolve-theme-id';
 
 import { allFontVariables } from '@/lib/fonts';
 import { AppProviders } from '@/lib/providers';
-import { defaultFlags } from '@/lib/theme/default-flags';
+import { ThemeSwitcher } from '@/lib/components/ThemeSwitcher';
+import { defaultThemeFlags } from '@/lib/theme/default-theme-flags';
 import type { ThemeFlags } from '@/lib/theme/theme.zod';
 
-import './globals.css';
-
-const defaultFavicon = '📖';
+import '@/css/globals.css';
 
 /**
  * Per-request metadata. Reads the active theme id and its override to pick
@@ -22,14 +21,13 @@ const defaultFavicon = '📖';
 export async function generateMetadata(): Promise<Metadata> {
   const themeId = await resolveThemeId();
   const override = await loadThemeOverride(themeId);
-  const favicon = override.favicon || defaultFavicon;
 
   return {
     title: 'Jason Knowles — Senior Software Engineer',
     description:
       'Senior software engineer building front-end architecture at scale, currently exploring full-stack opportunities for deeper end-to-end experience.',
     icons: {
-      icon: emojiToFaviconDataUrl(favicon),
+      icon: emojiToFaviconDataUrl(override.favicon ?? ''),
     },
   };
 }
@@ -38,22 +36,25 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
   const themeId = await resolveThemeId();
   const override = await loadThemeOverride(themeId);
   const messages = await getMessages();
+  const themes = await listThemes();
 
   // Cast to ThemeFlags: deepmerge widens the type to reflect that override.flags
-  // has optional fields, but defaultFlags provides every required field, so the
-  // merged result IS a complete ThemeFlags shape at runtime.
-  const flags = deepmerge(defaultFlags, override.flags, {
+  // has optional fields, but defaultThemeFlags provides every required field, so
+  // the merged result IS a complete ThemeFlags shape at runtime.
+  const flags = deepmerge(defaultThemeFlags, override.flags, {
     arrayMerge: (_dest, src) => src,
   }) as ThemeFlags;
 
   return (
     <html lang='en'
-          className={`${allFontVariables} h-full antialiased`}>
-      <body className='min-h-full flex flex-col'>
+          className={`Portfolio theme-${themeId} ${allFontVariables} h-full antialiased`}>
+      <body className='portfolio-body min-h-full flex flex-col'>
         <AppProviders themeId={themeId}
                       styles={override.styles}
                       flags={flags}
+                      metadata={override.metadata}
                       messages={messages}>
+          <ThemeSwitcher themes={themes} />
           {children}
         </AppProviders>
       </body>
