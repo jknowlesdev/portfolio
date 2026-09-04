@@ -1,17 +1,8 @@
 .HomePage {
   .home-page-intro {
-    .home-page-name {
-      font-family: var(--font-heading);
-    }
-
     .home-page-role,
     .home-page-location {
       color: var(--color-muted);
-      font-family: var(--font-body);
-    }
-
-    .home-page-tagline {
-      font-family: var(--font-body);
     }
   }
 }
