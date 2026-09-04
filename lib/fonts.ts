@@ -7,6 +7,8 @@
  */
 
 import {
+  Bricolage_Grotesque,
+  Fraunces,
   Geist,
   Geist_Mono,
   Playfair_Display,
@@ -42,6 +44,17 @@ export const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
 });
 
+// Custom theme fonts
+export const bricolageGrotesque = Bricolage_Grotesque({
+  variable: '--font-bricolage-grotesque',
+  subsets: ['latin'],
+});
+
+export const fraunces = Fraunces({
+  variable: '--font-fraunces',
+  subsets: ['latin'],
+});
+
 /**
  * Combined className string for all font variables — applied once to the
  * <html> tag so every font is available via var(--font-X) in CSS.
@@ -52,4 +65,6 @@ export const allFontVariables = [
   playfairDisplay.variable,
   sourceSerif.variable,
   jetbrainsMono.variable,
+  bricolageGrotesque.variable,
+  fraunces.variable,
 ].join(' ');

@@ -5,6 +5,13 @@
   "favicon": "⚙️",
   "order": 4,
 
+  "styles": {
+    "fonts": {
+      "heading": "var(--font-bricolage-grotesque)",
+      "body": "var(--font-fraunces)"
+    }
+  },
+
   "translations": {
     "Intro": {
       "bio": "This is an example of a “custom” type of theme for my portfolio. All features within each theme are driven by a JSON file, this paragraph among them. I built this portfolio to demonstrate my expertise in multi-tenant platform configuration and accessible design, as I am very interested in full-stack engineering opportunities that extend deep front-end architecture into end-to-end product work.",
