@@ -24,6 +24,7 @@ export const defaultThemeTranslations: ThemeTranslations = {
     privacyNote: 'Only counts total visits and downloads. No cookies, no personal data, no tracking across visits.',
   },
   Intro: {
+    bio: '',
     contactCta: 'Contact',
     downloadCta: 'Download resume',
     location: 'Boston area',

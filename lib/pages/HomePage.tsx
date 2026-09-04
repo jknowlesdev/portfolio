@@ -8,6 +8,8 @@
 
 import { getTranslations } from 'next-intl/server';
 
+import { Dropcap } from '@/lib/widgets/Dropcap';
+
 import '@/css/HomePage.css';
 
 export async function HomePage() {
@@ -25,9 +27,14 @@ export async function HomePage() {
         <p className='home-page-location text-sm mb-6'>
           {tIntro('location')}
         </p>
-        <p className='home-page-tagline text-lg'>
+        <p className='home-page-tagline text-lg mb-6'>
           {tIntro('tagline')}
         </p>
+        <Dropcap>
+          <p className='home-page-bio text-base'>
+            {tIntro('bio')}
+          </p>
+        </Dropcap>
       </div>
     </main>
   );
