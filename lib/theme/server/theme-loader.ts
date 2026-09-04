@@ -16,16 +16,23 @@
 import 'server-only';
 import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { themeOverrideSchema, type ThemeMetadata, type ThemeOverride } from '@/lib/theme/theme.zod';
+import {
+  themeOverrideSchema,
+  type ThemeFlagsOverride,
+  type ThemeMetadata,
+  type ThemeOverride,
+  type ThemeStylesOverride,
+  type ThemeTranslationsOverride,
+} from '@/lib/theme/theme.zod';
 
 const themesDir = join(process.cwd(), 'content', 'custom-themes');
 const filePrefix = 'theme-';
 const fileSuffix = '.json';
 
 type LoadedOverride = {
-  styles: ThemeOverride['styles'];
-  flags: ThemeOverride['flags'];
-  translations: ThemeOverride['translations'];
+  styles: ThemeStylesOverride;
+  flags: ThemeFlagsOverride;
+  translations: ThemeTranslationsOverride;
   favicon: ThemeOverride['favicon'];
   metadata: { fromCached: boolean };
 };
