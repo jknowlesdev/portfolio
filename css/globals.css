@@ -67,9 +67,14 @@ html.Portfolio {
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-heading);
     }
-  }
 
-  button {
-    cursor: pointer;
+    button {
+      cursor: pointer;
+    }
+
+    /* prevent overlap between portfolio content and ThemeSwitcher on narrow or short viewports */
+    @media (max-width: 639px), (max-height: 800px) {
+      padding-top: 5rem;
+    }
   }
 }
