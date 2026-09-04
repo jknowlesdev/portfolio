@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const override = await loadThemeOverride(themeId);
 
   return {
-    title: 'Jason Knowles — Senior Software Engineer',
+    title: 'Jason Knowles | Senior Software Engineer',
     description:
       'Senior software engineer building front-end architecture at scale, currently exploring full-stack opportunities for deeper end-to-end experience.',
     icons: {
