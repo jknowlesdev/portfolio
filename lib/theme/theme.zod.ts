@@ -40,6 +40,7 @@ export const themeSchema = z.object({
 
   translations: z.object({
     Aria: translationSection,
+    Classifieds: translationSection,
     Customization: translationSection,
     Footer: translationSection,
     Intro: translationSection,
@@ -101,6 +102,7 @@ export const themeOverrideSchema = z.object({
 
   translations: z.object({
     Aria: translationSection.optional(),
+    Classifieds: translationSection.optional(),
     Customization: translationSection.optional(),
     Footer: translationSection.optional(),
     Intro: translationSection.optional(),

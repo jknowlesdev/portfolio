@@ -13,6 +13,18 @@ export const defaultThemeTranslations: ThemeTranslations = {
     switchToTheme: 'Switch to {theme} theme',
     themeSwitcher: 'Theme',
   },
+  Classifieds: {
+    ad1Header: 'POSITION',
+    ad1Body: 'Deep front-end architecture; expanding end-to-end, conception to delivery.',
+    ad2Header: 'SEEKING',
+    ad2Body: 'JavaScript/TypeScript ecosystem; framework-flexible',
+    ad3Header: 'EXPERIENCE',
+    ad3Body: '8+ years front-end architecture; multi-tenant systems',
+    ad4Header: 'NOTICE',
+    ad4Body: 'Runs only when a theme enables the classifieds widget.',
+    sectionTitle: 'Classifieds Section Typically Seen in Newspapers',
+    sectionSubtitle: 'A portfolio widget demonstrating self-classifieds in classic newspaper advertisement form.',
+  },
   Customization: {
     closeButton: 'Close',
     panelDescription: 'Toggle features on and off to see how this theme is built. Each option maps to a value in the theme JSON at content/custom-themes/theme-{id}.json.',

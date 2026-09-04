@@ -1,0 +1,52 @@
+.Classifieds {
+  border-top: 2px solid var(--color-foreground);
+  border-bottom: 2px solid var(--color-foreground);
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+
+  .classifieds-heading {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.15em;
+    font-size: 1rem;
+  }
+
+  .classifieds-subtitle {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .classifieds-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .classifieds-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .classifieds-ad {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--color-border);
+
+    .classifieds-ad-header {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .classifieds-ad-body {
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+  }
+}

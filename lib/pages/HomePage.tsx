@@ -8,6 +8,7 @@
 
 import { getTranslations } from 'next-intl/server';
 
+import { Classifieds } from '@/lib/widgets/Classifieds';
 import { Dropcap } from '@/lib/widgets/Dropcap';
 
 import '@/css/HomePage.css';
@@ -35,6 +36,7 @@ export async function HomePage() {
             {tIntro('bio')}
           </p>
         </Dropcap>
+        <Classifieds />
       </div>
     </main>
   );
