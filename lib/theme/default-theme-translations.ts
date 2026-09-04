@@ -48,6 +48,13 @@ export const defaultThemeTranslations: ThemeTranslations = {
     themeSwitch: 'Theme',
     viewConfig: 'View configuration',
   },
+  Newsticker: {
+    ariaLabel: 'Rolling headlines',
+    headline1: 'SPOTLIGHT: Portfolio launches with configurable themes',
+    headline2: 'STYLE: Fonts and colors swap based on active theme',
+    headline3: 'CAREER: Full-stack roles under active consideration',
+    headline4: 'OPINION: Front-end architecture pairs well with end-to-end engineering',
+  },
   Sections: {
     education: 'Education',
     experience: 'Experience',

@@ -10,6 +10,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { Classifieds } from '@/lib/widgets/Classifieds';
 import { Dropcap } from '@/lib/widgets/Dropcap';
+import { Newsticker } from '@/lib/widgets/Newsticker';
 
 import '@/css/HomePage.css';
 
@@ -37,6 +38,7 @@ export async function HomePage() {
           </p>
         </Dropcap>
         <Classifieds />
+        <Newsticker />
       </div>
     </main>
   );
