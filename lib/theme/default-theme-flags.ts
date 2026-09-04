@@ -6,7 +6,7 @@
 
 import type { ThemeFlags } from './theme.zod';
 
-export const defaultFlags: ThemeFlags = {
+export const defaultThemeFlags: ThemeFlags = {
   sections: {
     intro: true,
     summary: true,

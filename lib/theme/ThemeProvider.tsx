@@ -20,12 +20,13 @@
 import { createContext, useContext, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { ThemeStylesOverride, ThemeFlags } from './theme.zod';
-import { applyStyleOverrides } from './stylevar-utils';
+import { applyStyleOverrides, clearStyleOverrides } from './style-utils';
 
 type ThemeContextValue = {
   themeId: string;
   styles: ThemeStylesOverride;
   flags: ThemeFlags;
+  metadata: { fromCached: boolean };
 };
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
@@ -34,16 +35,19 @@ type ThemeProviderProps = {
   themeId: string;
   styles: ThemeStylesOverride;
   flags: ThemeFlags;
+  metadata: { fromCached: boolean };
   children: ReactNode;
 };
 
-export function ThemeProvider({ themeId, styles, flags, children }: ThemeProviderProps) {
+export function ThemeProvider({ themeId, styles, flags, metadata, children }: ThemeProviderProps) {
   useEffect(() => {
+    // console.info(`[ThemeProvider] theme: ${themeId}, fromCached: ${metadata.fromCached}`);
+    clearStyleOverrides();
     applyStyleOverrides(styles);
-  }, [styles]);
+  }, [themeId, styles, metadata]);
 
   return (
-    <ThemeContext.Provider value={{ themeId, styles, flags }}>
+    <ThemeContext.Provider value={{ themeId, styles, flags, metadata }}>
       {children}
     </ThemeContext.Provider>
   );

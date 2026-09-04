@@ -3,10 +3,10 @@
  * (defaults to <html>). Prefix `--` is handled automatically — callers pass
  * names without it.
  *
- * Also includes `applyStyleOverrides()` — the theme-specific convenience
- * wrapper that iterates a theme's `styles` object (colors, fonts, text,
- * spacing) and sets each key as a CSS custom property. Defaults declared in
- * globals.css cascade through for any key a theme does not override.
+ * Also includes the theme-specific pair `applyStyleOverrides()` +
+ * `clearStyleOverrides()` for the theme-switch flow. Applying a theme
+ * sets its overrides as inline CSS vars; clearing removes them so the
+ * :root defaults from globals.css cascade back.
  *
  * Client-side only — these touch `document`. Call from Client Components
  * or inside useEffect.
@@ -47,15 +47,40 @@ export function removeStyleVar(
 }
 
 /**
- * Apply a theme's style overrides as CSS custom properties on an element.
- * Only keys the theme actually overrides are set; unmentioned keys inherit
- * from the `:root` defaults declared in globals.css.
+ * Track which CSS vars applyStyleOverrides() has set on the element so
+ * clearStyleOverrides() can undo them. Module-scope so both functions
+ * share state.
+ */
+let lastAppliedVars = new Set<string>();
+
+/**
+ * Remove all CSS custom properties that this module has previously applied.
+ * Reverts to the :root defaults from the CSS cascade. Call this before
+ * applyStyleOverrides() when switching themes so the previous theme's
+ * inline vars do not stick around.
+ */
+export function clearStyleOverrides(
+  element: HTMLElement = document.documentElement,
+): void {
+  for (const name of lastAppliedVars) {
+    element.style.removeProperty(name);
+  }
+  lastAppliedVars.clear();
+}
+
+/**
+ * Apply a theme's style overrides as inline CSS custom properties on the
+ * element. Only keys the theme actually overrides are set; unmentioned keys
+ * inherit from the :root defaults declared in globals.css.
  *
  * Naming maps directly to Tailwind v4 @theme conventions:
  *   styles.colors.X   →  --color-X
  *   styles.fonts.X    →  --font-X
  *   styles.text.X     →  --text-X
  *   styles.spacing.X  →  --spacing-X
+ *
+ * Call clearStyleOverrides() first when switching themes so the previous
+ * theme's inline vars do not persist.
  */
 export function applyStyleOverrides(
   styles: ThemeStylesOverride,
@@ -74,7 +99,9 @@ export function applyStyleOverrides(
       continue;
     }
     for (const [key, value] of Object.entries(sectionValues)) {
-      setStyleVar(`${prefix}-${key}`, value, element);
+      const varName = `--${prefix}-${key}`;
+      element.style.setProperty(varName, value);
+      lastAppliedVars.add(varName);
     }
   }
 }

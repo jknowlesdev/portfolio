@@ -19,14 +19,15 @@ type AppProvidersProps = {
   themeId: string;
   styles: ThemeStylesOverride;
   flags: ThemeFlags;
+  metadata: { fromCached: boolean };
   messages: Record<string, unknown>;
   children: ReactNode;
 };
 
-export function AppProviders({ themeId, styles, flags, messages, children }: AppProvidersProps) {
+export function AppProviders({ themeId, styles, flags, metadata, messages, children }: AppProvidersProps) {
   return (
-    <NextIntlClientProvider locale='en' messages={messages}>
-      <ThemeProvider themeId={themeId} styles={styles} flags={flags}>
+    <NextIntlClientProvider locale='en' timeZone='UTC' messages={messages}>
+      <ThemeProvider themeId={themeId} styles={styles} flags={flags} metadata={metadata}>
         {children}
       </ThemeProvider>
     </NextIntlClientProvider>

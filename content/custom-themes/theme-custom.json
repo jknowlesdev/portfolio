@@ -1,12 +1,13 @@
 {
-  "id": "kitchen-sink",
-  "displayName": "Kitchen Sink",
-  "description": "Every widget on. Feature showcase for the theme system.",
+  "id": "custom",
+  "displayName": "Custom",
+  "description": "Every widget rendered. Configurable via Customization Mode.",
   "favicon": "⚙️",
+  "order": 4,
 
   "translations": {
     "Intro": {
-      "tagline": "The Kitchen Sink: where every valve is tunable and the plumbing is on full display."
+      "tagline": "Showcase of customizable and configurable features from every theme."
     }
   },
 
