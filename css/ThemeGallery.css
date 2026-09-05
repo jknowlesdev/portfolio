@@ -1,0 +1,84 @@
+.ThemeGallery {
+  margin-top: 2rem;
+
+  .theme-gallery-heading {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 0.25rem;
+  }
+
+  .theme-gallery-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .theme-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .theme-gallery-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 0.5rem;
+      background: var(--color-surface);
+      box-shadow: var(--shadow-sm);
+      color: var(--color-foreground);
+      text-decoration: none;
+      transition: background-color 0.15s ease-out, border-color 0.15s ease-out, box-shadow 0.15s ease-out;
+
+      /* Hover / focus on non-active cards — bg matches ThemeSwitcher's hover treatment. */
+      &:hover:not([aria-current='true']),
+      &:focus-visible:not([aria-current='true']) {
+        background-color: var(--color-hover-bg);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+      }
+
+      /* Active card — inverted bg + text, matches ThemeSwitcher's active button. */
+      &[aria-current='true'] {
+        background: var(--color-foreground);
+        color: var(--color-background);
+      }
+
+      &[aria-current='true']:hover {
+        background: var(--color-active-hover-bg);
+      }
+
+      &[aria-current='true'] .theme-gallery-card-description {
+        color: inherit;
+        opacity: 0.75;
+      }
+
+      .theme-gallery-card-favicon {
+        font-size: 1.75rem;
+        line-height: 1;
+      }
+
+      .theme-gallery-card-name {
+        font-size: 1rem;
+        font-weight: var(--font-weight-semibold);
+        margin: 0;
+      }
+
+      .theme-gallery-card-description {
+        font-size: 0.8125rem;
+        color: var(--color-muted);
+        margin: 0;
+        line-height: 1.4;
+      }
+    }
+  }
+}

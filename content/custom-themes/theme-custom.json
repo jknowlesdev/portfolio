@@ -24,6 +24,7 @@
       "geometric": true,
       "scrollReveal": true,
       "cursorTrail": true,
+      "themeGallery": true,
       "dropcap": true,
       "newsticker": true,
       "classifieds": true,

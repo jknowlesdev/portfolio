@@ -28,6 +28,7 @@ export const defaultThemeFlags: ThemeFlags = {
     geometric: true,
     scrollReveal: true,
     cursorTrail: true,
+    themeGallery: true,
 
     // Newspaper look-and-feel
     dropcap: false,
