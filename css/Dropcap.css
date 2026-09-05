@@ -1,4 +1,9 @@
 .Dropcap {
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+
   p::first-letter {
     float: left;
     font-size: 3.5rem;
