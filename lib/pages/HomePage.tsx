@@ -8,9 +8,11 @@
 
 import { getTranslations } from 'next-intl/server';
 
+import { listThemes } from '@/lib/theme/server/theme-loader';
 import { Classifieds } from '@/lib/widgets/Classifieds';
 import { Dropcap } from '@/lib/widgets/Dropcap';
 import { Newsticker } from '@/lib/widgets/Newsticker';
+import { ThemeGallery } from '@/lib/widgets/ThemeGallery';
 
 import '@/css/HomePage.css';
 
@@ -20,6 +22,7 @@ const RESUME_URL = `${GITHUB_URL}/blob/main/RESUME.md`;
 
 export async function HomePage() {
   const tIntro = await getTranslations('Intro');
+  const themes = await listThemes();
 
   return (
     <main className='HomePage min-h-screen flex flex-col items-center justify-center px-8'>
@@ -52,6 +55,7 @@ export async function HomePage() {
           </p>
         </Dropcap>
         <Classifieds />
+        <ThemeGallery themes={themes} />
         <Newsticker />
       </div>
     </main>

@@ -29,6 +29,10 @@
   --color-border: rgba(0, 0, 0, 0.08);
   --color-surface: #fafafa;
 
+  /* interaction-state derived bgs (theme-adaptive via color-mix) */
+  --color-hover-bg: color-mix(in srgb, var(--color-surface) 92%, var(--color-foreground));
+  --color-active-hover-bg: color-mix(in srgb, var(--color-foreground) 90%, var(--color-background));
+
   /* fonts — Geist Sans loaded via next/font/google in app/layout.tsx */
   --font-heading: var(--font-geist-sans);
   --font-body: var(--font-geist-sans);

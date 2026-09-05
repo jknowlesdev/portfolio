@@ -8,7 +8,7 @@
     color: var(--color-foreground);
 
     &:hover:not([aria-current='true']) {
-      background: var(--color-border);
+      background: var(--color-hover-bg);
     }
 
     &[aria-current='true'] {
@@ -18,7 +18,7 @@
     }
 
     &[aria-current='true']:hover {
-      @apply opacity-90;
+      background: var(--color-active-hover-bg);
     }
 
     @media (prefers-reduced-motion: no-preference) {

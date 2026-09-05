@@ -48,6 +48,7 @@ export const themeSchema = z.object({
     Newsticker: translationSection,
     Sections: translationSection,
     Stats: translationSection,
+    ThemeGallery: translationSection,
     Widgets: translationSection,
   }),
 
@@ -65,6 +66,7 @@ export const themeSchema = z.object({
       geometric: z.boolean(),          // interactive shape composition
       scrollReveal: z.boolean(),       // scroll-triggered fade/slide animations
       cursorTrail: z.boolean(),        // subtle cursor effect
+      themeGallery: z.boolean(),       // card-based gallery of other themes with click-to-switch
 
       // Newspaper look-and-feel
       dropcap: z.boolean(),            // ornate first-letter + pull-quote reveal
@@ -111,6 +113,7 @@ export const themeOverrideSchema = z.object({
     Newsticker: translationSection.optional(),
     Sections: translationSection.optional(),
     Stats: translationSection.optional(),
+    ThemeGallery: translationSection.optional(),
     Widgets: translationSection.optional(),
   }).partial().optional(),
 
@@ -128,6 +131,7 @@ export const themeOverrideSchema = z.object({
       geometric: z.boolean().optional(),
       scrollReveal: z.boolean().optional(),
       cursorTrail: z.boolean().optional(),
+      themeGallery: z.boolean().optional(),
 
       // Newspaper look-and-feel
       dropcap: z.boolean().optional(),

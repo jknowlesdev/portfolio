@@ -69,6 +69,11 @@ export const defaultThemeTranslations: ThemeTranslations = {
     totalDownloads: 'resume downloads',
     totalVisits: 'visitors',
   },
+  ThemeGallery: {
+    ariaCardLink: 'Switch to {theme} theme',
+    sectionSubtitle: 'Each theme has its own self-contained JSON configuration, fetched server-side and applied client-side. This modular architecture allows for quick expansion, easy customization, and clean separation of content from code.',
+    sectionTitle: 'About Portfolio Themes',
+  },
   Widgets: {
     collapseLabel: 'Show less',
     expandLabel: 'Show more',
