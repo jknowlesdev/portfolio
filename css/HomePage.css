@@ -1,8 +1,16 @@
 .HomePage {
   .home-page-intro {
-    .home-page-role,
-    .home-page-location {
+    .home-page-role {
       color: var(--color-muted);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .home-page-actions {
+      font-weight: var(--font-weight-medium);
+
+      a:hover {
+        font-weight: var(--font-weight-semibold);
+      }
     }
   }
 }

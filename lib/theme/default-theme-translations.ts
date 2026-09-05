@@ -37,10 +37,10 @@ export const defaultThemeTranslations: ThemeTranslations = {
   },
   Intro: {
     bio: '',
-    contactCta: 'Contact',
-    downloadCta: 'Download resume',
-    location: 'Boston area',
+    githubLabel: 'jknowlesdev/portfolio',
     name: 'Jason Knowles',
+    readmeLabel: 'README.md',
+    resumeLabel: 'Resume',
     role: 'Senior Software Engineer',
     tagline: 'Shipping clean, scalable code for 8+ years. Demonstrates config-driven, multi-tenant architecture.',
   },
