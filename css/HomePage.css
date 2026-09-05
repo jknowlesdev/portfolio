@@ -1,5 +1,11 @@
 .HomePage {
   .home-page-intro {
+    /* Flex items default to `min-width: auto` (its min-content width).
+     * Wide widget content (e.g. Newsticker's scrolling headline row) can
+     * push this container past its max-width cap. min-width: 0 opts out. */
+    min-width: 0;
+    width: 100%;
+
     .home-page-role {
       color: var(--color-muted);
       font-weight: var(--font-weight-medium);
