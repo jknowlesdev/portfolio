@@ -1,6 +1,6 @@
 # JASON KNOWLES
 
-Webster, MA · (774) 321-0974 · jknowlesdev@gmail.com · jknowlesdev.com · github.com/jknowlesdev
+Webster, MA · [774-321-0974](tel:+17743210974) · [jknowlesdev@gmail.com](mailto:jknowlesdev@gmail.com) · [jknowlesdev.com](https://jknowlesdev.com) · [github.com/jknowlesdev](https://github.com/jknowlesdev)
 
 ## SENIOR SOFTWARE ENGINEER
 JavaScript · TypeScript · React · Angular · Next.js · Node.js · Java / Spring Boot · SQL
@@ -93,8 +93,8 @@ tracking, retrospective blogs).
 
 ## PERSONAL PROJECTS
 
-**Interactive Portfolio & Personal Site — jknowlesdev.com**
-github.com/jknowlesdev/portfolio
+**Interactive Portfolio & Personal Site — [jknowlesdev.com](https://jknowlesdev.com)**
+[github.com/jknowlesdev/portfolio](https://github.com/jknowlesdev/portfolio)
 
 Modern full-stack portfolio built with Next.js on Vercel. Designed as a scalable demo gallery
 where each interactive demo showcases specific engineering patterns (scalability, DRY,
@@ -104,14 +104,6 @@ architecture itself demonstrates the principles.
 - Backend / Data: PostgreSQL (Neon), Drizzle ORM
 - i18n: next-intl
 - Deployment: Vercel
-
-**Learning Management System (LMS) — Proof of Concept**
-github.com/jknowlesdev/[repo]
-
-Independent full-stack project exploring modern LMS architecture with the technologies I would
-choose for a greenfield build.
-- Frontend: Angular
-- Backend: Dockerized NestJS + MongoDB
 
 ## TECHNICAL SKILLS
 
