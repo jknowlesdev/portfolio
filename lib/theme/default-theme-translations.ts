@@ -10,6 +10,7 @@ import type { ThemeTranslations } from './theme.zod';
 export const defaultThemeTranslations: ThemeTranslations = {
   Aria: {
     customizationToggle: 'Toggle customization mode panel',
+    loading: 'Loading',
     switchToTheme: 'Switch to {theme} theme',
     themeSwitcher: 'Theme',
   },
