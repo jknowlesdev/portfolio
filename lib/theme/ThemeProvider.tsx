@@ -17,9 +17,10 @@
 
 'use client';
 
-import { createContext, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
+import { Loader } from '@/lib/components/Loader';
 import { isDev } from '@/lib/env';
 import type { ThemeStylesOverride, ThemeFlags } from './theme.zod';
 import { applyStyleOverrides, clearStyleOverrides } from './style-utils';
@@ -42,6 +43,8 @@ type ThemeProviderProps = {
 };
 
 export function ThemeProvider({ themeId, styles, flags, metadata, children }: ThemeProviderProps) {
+  const [initialReady, setInitialReady] = useState(false);
+
   useEffect(() => {
     // Dev-only visibility for theme switching. Kept out of prod so visitors do not see internals in their console.
     if (isDev) {
@@ -49,11 +52,18 @@ export function ThemeProvider({ themeId, styles, flags, metadata, children }: Th
     }
     clearStyleOverrides();
     applyStyleOverrides(styles);
-  }, [themeId, styles, metadata]);
+    if (!initialReady) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setInitialReady(true);
+    }
+  }, [themeId, styles, metadata, initialReady]);
 
   return (
     <ThemeContext.Provider value={{ themeId, styles, flags, metadata }}>
-      {children}
+      <Loader active={!initialReady} />
+      <div className='portfolio-content' data-ready={initialReady}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 }

@@ -103,6 +103,23 @@ html.Portfolio {
       cursor: pointer;
     }
 
+    .portfolio-content {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+
+      &[data-ready='true'] {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .portfolio-content {
+        transition: none;
+      }
+    }
+
     /* prevent overlap between portfolio content and ThemeSwitcher on narrow or short viewports */
     @media (max-width: 639px), (max-height: 800px) {
       padding-top: 5rem;
