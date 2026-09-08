@@ -35,6 +35,7 @@ export const themeSchema = z.object({
     colors: stringMap,       // hex, rgba, or any CSS color string
     fonts: stringMap,        // CSS font-family strings
     text: stringMap,         // CSS font-size values (rem, clamp, etc.)
+    iconSizes: stringMap,    // CSS length values for icon dimensions (--icon-size-*)
     spacing: stringMap,      // CSS length values
   }),
 
@@ -46,6 +47,9 @@ export const themeSchema = z.object({
     Intro: translationSection,
     Navigation: translationSection,
     Newsticker: translationSection,
+    NotFound: translationSection,
+    Readme: translationSection,
+    Resume: translationSection,
     Sections: translationSection,
     Stats: translationSection,
     ThemeGallery: translationSection,
@@ -100,6 +104,7 @@ export const themeOverrideSchema = z.object({
     colors: stringMap.optional(),
     fonts: stringMap.optional(),
     text: stringMap.optional(),
+    iconSizes: stringMap.optional(),
     spacing: stringMap.optional(),
   }).partial().optional(),
 
@@ -111,6 +116,9 @@ export const themeOverrideSchema = z.object({
     Intro: translationSection.optional(),
     Navigation: translationSection.optional(),
     Newsticker: translationSection.optional(),
+    NotFound: translationSection.optional(),
+    Readme: translationSection.optional(),
+    Resume: translationSection.optional(),
     Sections: translationSection.optional(),
     Stats: translationSection.optional(),
     ThemeGallery: translationSection.optional(),

@@ -1,31 +1,33 @@
 @reference './globals.css';
 
-.ThemeSwitcher {
-  background: var(--color-surface);
-  border-color: var(--color-border);
+html.Portfolio body.portfolio-body {
+  .ThemeSwitcher {
+    background: var(--color-surface);
+    border-color: var(--color-border);
 
-  .theme-switcher-button {
-    color: var(--color-foreground);
+    .theme-switcher-button {
+      color: var(--color-foreground);
 
-    &:hover:not([aria-current='true']) {
-      background: var(--color-hover-bg);
-    }
+      &:hover:not([aria-current='true']) {
+        background: var(--color-hover-bg);
+      }
 
-    &[aria-current='true'] {
-      background: var(--color-foreground);
-      color: var(--color-background);
-      font-weight: var(--font-weight-semibold);
-    }
+      &[aria-current='true'] {
+        background: var(--color-foreground);
+        color: var(--color-background);
+        font-weight: var(--font-weight-semibold);
+      }
 
-    &[aria-current='true']:hover {
-      background: var(--color-active-hover-bg);
-    }
+      &[aria-current='true']:hover {
+        background: var(--color-active-hover-bg);
+      }
 
-    @media (prefers-reduced-motion: no-preference) {
-      @apply transition duration-150 ease-out;
+      @media (prefers-reduced-motion: no-preference) {
+        @apply transition duration-150 ease-out;
 
-      &:active {
-        @apply scale-95;
+        &:active {
+          @apply scale-95;
+        }
       }
     }
   }

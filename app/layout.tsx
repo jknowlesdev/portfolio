@@ -47,13 +47,14 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
 
   return (
     <html lang='en'
-          className={`Portfolio theme-${themeId} ${allFontVariables} h-full antialiased`}>
+      className={`Portfolio theme-${themeId} ${allFontVariables} h-full antialiased`}>
       <body className='portfolio-body min-h-full flex flex-col'>
-        <AppProviders themeId={themeId}
-                      styles={override.styles}
-                      flags={flags}
-                      metadata={override.metadata}
-                      messages={messages}>
+        <AppProviders
+          themeId={themeId}
+          styles={override.styles}
+          flags={flags}
+          metadata={override.metadata}
+          messages={messages}>
           <ThemeSwitcher themes={themes} />
           {children}
         </AppProviders>

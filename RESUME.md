@@ -10,18 +10,18 @@ JavaScript · TypeScript · React · Angular · Next.js · Node.js · Java / Spr
   reporting subsystem, and gradebook foundation for a K-12 platform serving 1.1B+ answered
   student questions and 37.8M+ learning hours
 - Particular strength in refactoring legacy applications into modernized, scalable architectures
-  — multiple migrations from AngularJS, jQuery, and Kendo UI stacks into current React / MobX
+  - multiple migrations from AngularJS, jQuery, and Kendo UI stacks into current React / MobX
   and Angular codebases
 - Framework-flexible (React, Angular) with a Spring / Java backend background; extensive
   JavaScript foundations extend naturally to Node.js, NestJS, and Next.js for full-stack work
-- Active in team code review — flags risks early, reinforces conventions, and recognizes strong
+- Active in team code review - flags risks early, reinforces conventions, and recognizes strong
   work from teammates
 - Embraces AI as an efficiency tool rather than an autonomous decision-maker
 
 ## EXPERIENCE
 
-### EvoText (Content2Classroom) — Carlisle, MA · Remote
-**Software Engineer** · June 2021 – Present
+### EvoText (Content2Classroom) - Carlisle, MA · Remote
+**Software Engineer** · June 2021 - Present
 
 Content2Classroom is EvoText's multi-tenant K-12 SaaS platform (2025 SIIA CODIE Award winner),
 supporting millions of users and billions of content transactions per month.
@@ -29,14 +29,14 @@ supporting millions of users and billions of content transactions per month.
 - **Pivotal in shaping the multi-tenant SaaS platform from the ground up.** Began contributing in
   August 2020 when the codebase was largely a shell; became a central contributor as it scaled to
   over 20 white-label "satellites", serving district admins, school admins, teachers, and students.
-  Designed and own the current *dynamic satellite* paradigm — replaced the per-satellite-fork
+  Designed and own the current *dynamic satellite* paradigm - replaced the per-satellite-fork
   model with a unified repo where new tenants are provisioned via JSON + CSS themes (no
   per-customer code, no fork), cutting onboarding from a code-and-deploy effort to a configuration
   exercise. Set the team-wide discipline (canonical defaults, no one-off flags, cross-repo
   migration audits) that keeps the configuration surface coherent as the portfolio grows.
 
 - **Designed the front-end of the course and standards reporting subsystem.** Built a report
-  structure flowing top-down from district admin through school admin, teacher, and student —
+  structure flowing top-down from district admin through school admin, teacher, and student -
   shared logic, role-specific views, no per-role duplication.
 
 - **Built the foundation of the gradebook architecture.** Designed for scalability from the outset;
@@ -44,7 +44,7 @@ supporting millions of users and billions of content transactions per month.
 
 - **Modernized the legacy lesson-delivery application into its React replacement.** Ported and
   rewrote the full lesson player and question-type library from jQuery / HTML / CSS / Kendo UI
-  into a modern React / MobX codebase — preserved delivered behavior while replacing the
+  into a modern React / MobX codebase - preserved delivered behavior while replacing the
   underlying architecture, unlocking the accessibility, testability, and extensibility
   improvements the legacy stack blocked.
 
@@ -53,14 +53,14 @@ supporting millions of users and billions of content transactions per month.
   newspaper-style organization), and consistently recognizes strong work from teammates.
 
 - **Accessibility as a default requirement**, not a retrofit. Every new component built to pass
-  ARIA / WCAG audits at the design stage — visible focus indicators, semantic ARIA patterns,
+  ARIA / WCAG audits at the design stage - visible focus indicators, semantic ARIA patterns,
   screen-reader-friendly hidden text, and correct handling of dynamic show/hide state.
 
 - **Backend integration with the Java content management service** (Spring Boot, Liquibase, REST)
-  — primarily consumed APIs rather than authored backend features in this role.
+  - primarily consumed APIs rather than authored backend features in this role.
 
-### Aveniros — Woburn, MA
-**Software Engineer** · December 2018 – June 2021
+### Aveniros - Woburn, MA
+**Software Engineer** · December 2018 - June 2021
 
 Aveniros was a K-12 engineering startup that built its own Angular-based LMS, and maintained a
 longstanding partnership with EvoText (current employer).
@@ -79,11 +79,11 @@ longstanding partnership with EvoText (current employer).
 
 ## EDUCATION
 
-**Worcester State University** — Worcester, MA
-Bachelor of Science in Computer Science, concentration in Software Development · 2015 – 2018
-Dean's List, 2015 – 2018.
+**Worcester State University** - Worcester, MA
+Bachelor of Science in Computer Science, concentration in Software Development · 2015 - 2018
+Dean's List, 2015 - 2018.
 
-*Capstone / internship: Ampath Informatics — Eldoret, Kenya · Remote, Jan – Sep 2018.* Led a team of
+*Capstone / internship: Ampath Informatics - Eldoret, Kenya · Remote, Jan - Sep 2018.* Led a team of
 classmates to build a proof-of-concept, offline-first extension for OpenMRS (Angular + PouchDB /
 IndexedDB frontend, integrating with OpenMRS's Spring Boot + SQL backend) demonstrating that
 medical records could be accessed in the field without continuous online connectivity. My first
@@ -93,12 +93,12 @@ tracking, retrospective blogs).
 
 ## PERSONAL PROJECTS
 
-**Interactive Portfolio & Personal Site — [jknowlesdev.com](https://jknowlesdev.com)**
+**Interactive Portfolio & Personal Site - [jknowlesdev.com](https://jknowlesdev.com)**
 [github.com/jknowlesdev/portfolio](https://github.com/jknowlesdev/portfolio)
 
 Modern full-stack portfolio built with Next.js on Vercel. Designed as a scalable demo gallery
 where each interactive demo showcases specific engineering patterns (scalability, DRY,
-accessibility, multi-tenant configuration). Adding a new demo is a single-file drop — the
+accessibility, multi-tenant configuration). Adding a new demo is a single-file drop - the
 architecture itself demonstrates the principles.
 - Frontend: Next.js (App Router, Turbopack), TypeScript, Tailwind CSS
 - Backend / Data: PostgreSQL (Neon), Drizzle ORM
@@ -124,7 +124,7 @@ architecture itself demonstrates the principles.
 ### Legacy Systems (maintained and migrated to modern stacks)
 AngularJS · jQuery · Kendo UI · Rollup · CRACO · Webpack
 
-*Adaptable and quick to ramp on new frameworks, libraries, and tools — grounded in strong
+*Adaptable and quick to ramp on new frameworks, libraries, and tools - grounded in strong
 JavaScript / TypeScript foundations and full-stack architectural fluency.*
 
 ### Practices
