@@ -1,0 +1,131 @@
+html.Portfolio body.portfolio-body {
+  .MarkdownPage {
+    .markdown-page-container {
+      .markdown-page-nav {
+        margin-bottom: 2rem;
+
+        /* .markdown-page-back {} */
+      }
+
+      .markdown-page-header {
+        margin-bottom: 3rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+
+        .markdown-page-title {
+          font-size: var(--text-heading-1);
+          font-weight: var(--font-weight-bold);
+          margin-bottom: 0.5rem;
+        }
+
+        .markdown-page-description {
+          color: var(--color-muted);
+          margin-bottom: 1rem;
+        }
+
+        /* .markdown-page-github-link {} */
+      }
+
+      /* Re-add browser defaults for markdown output. Tailwind v4 Preflight
+       * strips h1-h6/p/ul/ol/blockquote/pre defaults; we restore them here
+       * scoped to the article so the rest of the app keeps utility-only styling. */
+      .markdown-page-content {
+        line-height: 1.6;
+
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: var(--font-weight-semibold);
+          margin-top: 2rem;
+          margin-bottom: 0.75rem;
+          line-height: 1.25;
+        }
+
+        h1 { font-size: 1.875rem; }
+        h2 { font-size: 1.5rem; }
+        h3 { font-size: 1.25rem; }
+        h4 { font-size: 1.125rem; }
+
+        p {
+          margin-bottom: 1rem;
+        }
+
+        ul, ol {
+          margin-bottom: 1rem;
+          padding-left: 1.5rem;
+        }
+
+        ul { list-style: disc; }
+        ol { list-style: decimal; }
+
+        li {
+          margin-bottom: 0.25rem;
+        }
+
+        li > p {
+          margin-bottom: 0.25rem;
+        }
+
+        strong {
+          font-weight: var(--font-weight-semibold);
+        }
+
+        em {
+          font-style: italic;
+        }
+
+        code {
+          font-family: ui-monospace, monospace;
+          font-size: 0.875em;
+          padding: 0.125em 0.375em;
+          background: var(--color-surface);
+          border: 1px solid var(--color-border);
+          border-radius: 0.25rem;
+        }
+
+        pre {
+          margin-bottom: 1rem;
+          padding: 1rem;
+          overflow-x: auto;
+          background: var(--color-surface);
+          border: 1px solid var(--color-border);
+          border-radius: 0.5rem;
+
+          code {
+            padding: 0;
+            background: transparent;
+            border: none;
+          }
+        }
+
+        blockquote {
+          margin: 1rem 0;
+          padding-left: 1rem;
+          border-left: 3px solid var(--color-border);
+          color: var(--color-muted);
+        }
+
+        hr {
+          margin: 2rem 0;
+          border: none;
+          border-top: 1px solid var(--color-border);
+        }
+
+        table {
+          width: 100%;
+          margin-bottom: 1rem;
+          border-collapse: collapse;
+
+          th, td {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--color-border);
+            text-align: left;
+          }
+
+          th {
+            font-weight: var(--font-weight-semibold);
+            background: var(--color-surface);
+          }
+        }
+      }
+    }
+  }
+}

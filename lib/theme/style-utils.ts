@@ -73,11 +73,12 @@ export function clearStyleOverrides(
  * element. Only keys the theme actually overrides are set; unmentioned keys
  * inherit from the :root defaults declared in globals.css.
  *
- * Naming maps directly to Tailwind v4 @theme conventions:
- *   styles.colors.X   →  --color-X
- *   styles.fonts.X    →  --font-X
- *   styles.text.X     →  --text-X
- *   styles.spacing.X  →  --spacing-X
+ * Naming maps directly to Tailwind v4 @theme conventions where possible:
+ *   styles.colors.X     →  --color-X
+ *   styles.fonts.X      →  --font-X
+ *   styles.text.X       →  --text-X
+ *   styles.iconSizes.X  →  --icon-size-X
+ *   styles.spacing.X    →  --spacing-X
  *
  * Call clearStyleOverrides() first when switching themes so the previous
  * theme's inline vars do not persist.
@@ -90,6 +91,7 @@ export function applyStyleOverrides(
     colors: 'color',
     fonts: 'font',
     text: 'text',
+    iconSizes: 'icon-size',
     spacing: 'spacing',
   } as const;
 

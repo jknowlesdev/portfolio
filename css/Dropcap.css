@@ -1,16 +1,18 @@
-.Dropcap {
-  p {
-    text-align: justify;
-    hyphens: auto;
-  }
+html.Portfolio body.portfolio-body {
+  .Dropcap {
+    p {
+      text-align: justify;
+      hyphens: auto;
+    }
 
-  p::first-letter {
-    float: left;
-    font-size: 3.5rem;
-    line-height: 0.85;
-    padding: 0.25rem 0.5rem 0 0;
-    font-weight: bold;
-    color: var(--color-foreground);
-    font-family: var(--font-heading);
+    p::first-letter {
+      float: left;
+      font-size: 3.5rem;
+      line-height: 0.85;
+      padding: 0.25rem 0.5rem 0 0;
+      font-weight: bold;
+      color: var(--color-foreground);
+      font-family: var(--font-heading);
+    }
   }
 }

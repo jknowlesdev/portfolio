@@ -54,8 +54,8 @@ export function ThemeGallery({ themes }: ThemeGalleryProps) {
 
   return (
     <section className='ThemeGallery'
-             aria-labelledby='theme-gallery-heading'
-             aria-describedby='theme-gallery-subtitle'>
+      aria-labelledby='theme-gallery-heading'
+      aria-describedby='theme-gallery-subtitle'>
       <h2 id='theme-gallery-heading' className='theme-gallery-heading'>
         {tThemeGallery('sectionTitle')}
       </h2>
@@ -67,11 +67,11 @@ export function ThemeGallery({ themes }: ThemeGalleryProps) {
           const isActive = theme.id === activeThemeId;
           return (
             <a key={theme.id}
-               href={buildHref(theme.id)}
-               onClick={(e) => handleClick(e, theme.id)}
-               className='theme-gallery-card'
-               aria-current={isActive ? 'true' : undefined}
-               aria-label={tThemeGallery('ariaCardLink', { theme: theme.displayName })}>
+              href={buildHref(theme.id)}
+              onClick={(e) => handleClick(e, theme.id)}
+              className='theme-gallery-card'
+              aria-current={isActive ? 'true' : undefined}
+              aria-label={tThemeGallery('ariaCardLink', { theme: theme.displayName })}>
               {theme.favicon && (
                 <span className='theme-gallery-card-favicon' aria-hidden='true'>
                   {theme.favicon}

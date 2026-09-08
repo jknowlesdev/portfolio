@@ -46,8 +46,10 @@ export const defaultThemeTranslations: ThemeTranslations = {
     tagline: 'Shipping clean, scalable code for 8+ years. Demonstrates config-driven, multi-tenant architecture.',
   },
   Navigation: {
+    backToHome: 'Back to home',
     themeSwitch: 'Theme',
     viewConfig: 'View configuration',
+    viewOnGithub: 'View on GitHub',
   },
   Newsticker: {
     ariaLabel: 'Rolling headlines',
@@ -55,6 +57,18 @@ export const defaultThemeTranslations: ThemeTranslations = {
     headline2: 'STYLE: Fonts and colors swap based on active theme',
     headline3: 'CAREER: Full-stack roles under active consideration',
     headline4: 'OPINION: Front-end architecture pairs well with end-to-end engineering',
+  },
+  NotFound: {
+    description: 'This page could not be found.',
+    title: '404',
+  },
+  Readme: {
+    description: 'How this portfolio is built — architecture, stack, and how to run it locally.',
+    title: 'README',
+  },
+  Resume: {
+    description: 'Career overview, experience, and technical skills.',
+    title: 'Resume',
   },
   Sections: {
     education: 'Education',

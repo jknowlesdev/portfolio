@@ -44,6 +44,15 @@
   --text-body: clamp(1rem, 1.25vw, 1.125rem);
   --text-small: 0.875rem;
 
+  /* icon sizes - dimensions for inline icons (e.g. lucide-react).
+   * Theme overrides may adjust per-theme; utility classes consume these vars (e.g. .icon-xs/.icon-md/.icon-lg).
+   */
+  --icon-size-xs: 0.75rem;   /* ~12px */
+  --icon-size-sm: 0.875rem;  /* ~14px */
+  --icon-size-md: 1rem;      /* ~16px */
+  --icon-size-lg: 1.25rem;   /* ~20px */
+  --icon-size-xl: 1.5rem;    /* ~24px */
+
   /* spacing */
   --spacing-intro-y: clamp(3rem, 8vw, 6rem);
   --spacing-container-max: 44rem;
@@ -77,56 +86,85 @@
   --spacing-widget-padding: var(--spacing-widget-padding);
 }
 
-html.Portfolio {
-  body.portfolio-body {
-    background: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-body);
+/*
+ * All portfolio styles are scoped inside `html.Portfolio body.portfolio-body`
+ * (same pattern as sat-core's `body.c2c-satellite`). This gives all rules a
+ * baseline specificity of 2 (html.Portfolio + body.portfolio-body) that
+ * comfortably overrides Tailwind utility classes (specificity 1) via standard
+ * cascade math - no @layer machinery required.
+ *
+ * Every colocated .css file wraps its content in the same
+ * `html.Portfolio body.portfolio-body { ... }` selector.
+ */
+html.Portfolio body.portfolio-body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-heading);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-skip-ink: none; /* solid underline under descenders (j, g, y, p, q) */
+    text-underline-offset: 2px;
+
+    &:hover {
+      text-decoration-thickness: 2px;
     }
 
-    a {
-      color: var(--color-accent);
-      text-decoration: underline;
-      text-decoration-skip-ink: none; /* solid underline under descenders (j, g, y, p, q) */
-      text-underline-offset: 2px;
-
-      &:hover {
-        text-decoration-thickness: 2px;
-      }
-
-      &:focus-visible {
-        outline: 2px solid var(--color-accent);
-        outline-offset: 2px;
-      }
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
     }
+  }
 
-    button {
-      cursor: pointer;
+  button {
+    cursor: pointer;
+  }
+
+  .portfolio-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+
+    &[data-ready='true'] {
+      visibility: visible;
+      opacity: 1;
     }
+  }
 
+  @media (prefers-reduced-motion: reduce) {
     .portfolio-content {
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease-in;
-
-      &[data-ready='true'] {
-        visibility: visible;
-        opacity: 1;
-      }
+      transition: none;
     }
+  }
 
-    @media (prefers-reduced-motion: reduce) {
-      .portfolio-content {
-        transition: none;
-      }
-    }
+  /* Always reserve vertical space at the top so page content sits below
+   * the fixed ThemeSwitcher regardless of viewport size. Pages should use
+   * `flex-1` on their <main> (not `min-h-screen`) so main fills the
+   * remaining body height without forcing a 100vh overflow. */
+  padding-top: 5rem;
 
-    /* prevent overlap between portfolio content and ThemeSwitcher on narrow or short viewports */
-    @media (max-width: 639px), (max-height: 800px) {
-      padding-top: 5rem;
-    }
+  /* Icon size utility classes - apply directly to icon elements
+   * (e.g. lucide-react <ArrowLeft className='icon-md' />).
+   * Consume the --icon-size-* vars so theme overrides propagate automatically.
+   */
+  .icon-xs { width: var(--icon-size-xs); height: var(--icon-size-xs); }
+  .icon-sm { width: var(--icon-size-sm); height: var(--icon-size-sm); }
+  .icon-md { width: var(--icon-size-md); height: var(--icon-size-md); }
+  .icon-lg { width: var(--icon-size-lg); height: var(--icon-size-lg); }
+  .icon-xl { width: var(--icon-size-xl); height: var(--icon-size-xl); }
+
+  /* Link (or any interactive element) containing an inline icon adjacent to text.
+   * Icon and text sit in an inline-flex row with tight gap. Text underline
+   * inherits from the global `a` rule; icon sits alongside as a decorative prefix.
+   */
+  .icon-link {
+    @apply inline-flex items-center gap-1 text-sm;
+
+    /* &:hover {} */
   }
 }
