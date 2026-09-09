@@ -2,8 +2,18 @@
 
 html.Portfolio body.portfolio-body {
   .ThemeSwitcher {
-    background: var(--color-surface);
-    border-color: var(--color-border);
+    /* Outer wrapper - no visible chrome, just flex layout for pill + caption. */
+
+    .theme-switcher-nav {
+      background: var(--color-surface);
+      border-color: var(--color-border);
+    }
+
+    .theme-switcher-heading {
+      color: var(--color-foreground);
+      font-weight: var(--font-weight-medium);
+      padding: 0 0.25rem;
+    }
 
     .theme-switcher-button {
       color: var(--color-foreground);

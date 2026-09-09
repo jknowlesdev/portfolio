@@ -7,7 +7,7 @@ import { resolveThemeId } from '@/lib/theme/server/resolve-theme-id';
 
 import { allFontVariables } from '@/lib/fonts';
 import { AppProviders } from '@/lib/providers';
-import { ThemeSwitcher } from '@/lib/components/ThemeSwitcher';
+import { PortfolioActionLinks } from '@/lib/components/PortfolioActionLinks';
 import { defaultThemeFlags } from '@/lib/theme/default-theme-flags';
 import type { ThemeFlags } from '@/lib/theme/theme.zod';
 
@@ -48,14 +48,14 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en'
       className={`Portfolio theme-${themeId} ${allFontVariables} h-full antialiased`}>
-      <body className='portfolio-body min-h-full flex flex-col'>
+      <body className='portfolio-body min-h-full flex flex-col gap-8 px-8'>
         <AppProviders
           themeId={themeId}
           styles={override.styles}
           flags={flags}
           metadata={override.metadata}
           messages={messages}>
-          <ThemeSwitcher themes={themes} />
+          <PortfolioActionLinks themes={themes} />
           {children}
         </AppProviders>
       </body>

@@ -45,7 +45,6 @@ export const themeSchema = z.object({
     Customization: translationSection,
     Footer: translationSection,
     Intro: translationSection,
-    Navigation: translationSection,
     Newsticker: translationSection,
     NotFound: translationSection,
     Readme: translationSection,
@@ -53,6 +52,7 @@ export const themeSchema = z.object({
     Sections: translationSection,
     Stats: translationSection,
     ThemeGallery: translationSection,
+    ThemeSwitcher: translationSection,
     Widgets: translationSection,
   }),
 
@@ -114,7 +114,6 @@ export const themeOverrideSchema = z.object({
     Customization: translationSection.optional(),
     Footer: translationSection.optional(),
     Intro: translationSection.optional(),
-    Navigation: translationSection.optional(),
     Newsticker: translationSection.optional(),
     NotFound: translationSection.optional(),
     Readme: translationSection.optional(),
@@ -122,6 +121,7 @@ export const themeOverrideSchema = z.object({
     Sections: translationSection.optional(),
     Stats: translationSection.optional(),
     ThemeGallery: translationSection.optional(),
+    ThemeSwitcher: translationSection.optional(),
     Widgets: translationSection.optional(),
   }).partial().optional(),
 

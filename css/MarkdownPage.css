@@ -8,12 +8,12 @@ html.Portfolio body.portfolio-body {
       }
 
       .markdown-page-header {
-        margin-bottom: 3rem;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid var(--color-border);
+        /* margin-bottom: 3rem; */
+        /* padding-bottom: 1.5rem; */
+        /* border-bottom: 1px solid var(--color-border); */
 
         .markdown-page-title {
-          font-size: var(--text-heading-1);
+          font-size: var(--text-heading-2);
           font-weight: var(--font-weight-bold);
           margin-bottom: 0.5rem;
         }

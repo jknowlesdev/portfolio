@@ -42,7 +42,8 @@
   --text-heading-2: clamp(1.75rem, 4vw, 2.5rem);
   --text-heading-3: clamp(1.25rem, 2.5vw, 1.5rem);
   --text-body: clamp(1rem, 1.25vw, 1.125rem);
-  --text-small: 0.875rem;
+  --text-sm: 0.875rem;    /* ~14px, theme-overridable */
+  --text-2xs: 0.6875rem;  /* ~11px, annotation-scale */
 
   /* icon sizes - dimensions for inline icons (e.g. lucide-react).
    * Theme overrides may adjust per-theme; utility classes consume these vars (e.g. .icon-xs/.icon-md/.icon-lg).
@@ -77,7 +78,8 @@
   --text-heading-2: var(--text-heading-2);
   --text-heading-3: var(--text-heading-3);
   --text-body: var(--text-body);
-  --text-small: var(--text-small);
+  --text-sm: var(--text-sm);
+  --text-2xs: var(--text-2xs);
 
   --spacing-intro-y: var(--spacing-intro-y);
   --spacing-container-max: var(--spacing-container-max);
@@ -121,18 +123,37 @@ html.Portfolio body.portfolio-body {
     }
   }
 
-  /* Link with an adjacent icon in an inline-flex row. On hover: text goes
-   * semibold and lucide icon strokes thicken for coordinated emphasis.
-   */
+  /* Link with an adjacent icon in an inline-flex row. Font weight and icon
+   * stroke both step up on hover for coordinated emphasis. */
   .icon-link {
     @apply inline-flex items-center gap-1 text-sm;
 
     &:hover {
-      font-weight: var(--font-weight-semibold);
+      font-weight: var(--font-weight-medium);
     }
 
     &:hover svg {
       stroke-width: 2.25;
+    }
+  }
+
+  /* Current-page variant of .icon-link. Steps up further so the active route
+   * reads as "you are here" while staying clickable. */
+  .icon-link-current {
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+
+    &:hover {
+      font-weight: var(--font-weight-semibold);
+      text-decoration: underline;
+    }
+
+    &:hover svg {
+      stroke-width: 2.75;
+    }
+
+    svg {
+      stroke-width: 2.75;
     }
   }
 
@@ -156,12 +177,6 @@ html.Portfolio body.portfolio-body {
       transition: none;
     }
   }
-
-  /* Always reserve vertical space at the top so page content sits below
-   * the fixed ThemeSwitcher regardless of viewport size. Pages should use
-   * `flex-1` on their <main> (not `min-h-screen`) so main fills the
-   * remaining body height without forcing a 100vh overflow. */
-  padding-top: 5rem;
 
   /* Icon size utility classes - apply directly to icon elements
    * (e.g. lucide-react <ArrowLeft className='icon-md' />).

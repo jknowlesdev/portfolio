@@ -8,7 +8,6 @@ import { GITHUB_README_URL } from '@/lib/urls';
  */
 export default async function Readme() {
   const tReadme = await getTranslations('Readme');
-  const tNavigation = await getTranslations('Navigation');
 
   return (
     <MarkdownPage
@@ -16,7 +15,6 @@ export default async function Readme() {
       title={tReadme('title')}
       description={tReadme('description')}
       githubUrl={GITHUB_README_URL}
-      githubLabel={tReadme('viewOnGithub')}
-      backLabel={tNavigation('backToHome')} />
+      githubLabel={tReadme('viewOnGithub')} />
   );
 }

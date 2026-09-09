@@ -11,13 +11,6 @@ html.Portfolio body.portfolio-body {
         color: var(--color-muted);
         font-weight: var(--font-weight-medium);
       }
-
-      .home-page-actions {
-        font-weight: var(--font-weight-medium);
-
-        /* Hover effect (bold text + thicker icon strokes) inherited from
-         * the shared .icon-link utility in globals.css. */
-      }
     }
   }
 }

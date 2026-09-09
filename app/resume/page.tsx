@@ -8,7 +8,6 @@ import { GITHUB_RESUME_URL } from '@/lib/urls';
  */
 export default async function Resume() {
   const tResume = await getTranslations('Resume');
-  const tNavigation = await getTranslations('Navigation');
 
   return (
     <MarkdownPage
@@ -16,7 +15,6 @@ export default async function Resume() {
       title={tResume('title')}
       description={tResume('description')}
       githubUrl={GITHUB_RESUME_URL}
-      githubLabel={tResume('viewOnGithub')}
-      backLabel={tNavigation('backToHome')} />
+      githubLabel={tResume('viewOnGithub')} />
   );
 }
