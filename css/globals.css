@@ -113,8 +113,12 @@ html.Portfolio body.portfolio-body {
     text-decoration-skip-ink: none; /* solid underline under descenders (j, g, y, p, q) */
     text-underline-offset: 2px;
 
-    &:hover {
-      text-decoration-thickness: 2px;
+    /* Gate hover styles to true pointer devices so touch taps do not leave a
+     * sticky :hover state on the tapped element until the user taps elsewhere. */
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration-thickness: 2px;
+      }
     }
 
     &:focus-visible {
@@ -128,12 +132,14 @@ html.Portfolio body.portfolio-body {
   .icon-link {
     @apply inline-flex items-center gap-1 text-sm;
 
-    &:hover {
-      font-weight: var(--font-weight-medium);
-    }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        font-weight: var(--font-weight-medium);
+      }
 
-    &:hover svg {
-      stroke-width: 2.25;
+      &:hover svg {
+        stroke-width: 2.25;
+      }
     }
   }
 
@@ -143,13 +149,15 @@ html.Portfolio body.portfolio-body {
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
 
-    &:hover {
-      font-weight: var(--font-weight-semibold);
-      text-decoration: underline;
-    }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        font-weight: var(--font-weight-semibold);
+        text-decoration: underline;
+      }
 
-    &:hover svg {
-      stroke-width: 2.75;
+      &:hover svg {
+        stroke-width: 2.75;
+      }
     }
 
     svg {
