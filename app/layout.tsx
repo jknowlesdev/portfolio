@@ -48,7 +48,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en'
       className={`Portfolio theme-${themeId} ${allFontVariables} h-full antialiased`}>
-      <body className='portfolio-body min-h-full flex flex-col gap-8 px-8'>
+      <body className='portfolio-body min-h-full flex flex-col gap-8 px-8 pb-16'>
         <AppProviders
           themeId={themeId}
           styles={override.styles}

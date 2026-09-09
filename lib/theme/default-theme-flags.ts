@@ -24,11 +24,11 @@ export const defaultThemeFlags: ThemeFlags = {
     showViewConfig: true,
   },
   widgets: {
-    // Default look-and-feel (on by default in the default theme)
-    geometric: true,
-    scrollReveal: true,
-    cursorTrail: true,
+    // Global (on across all themes unless the theme JSON overrides to false)
     themeGallery: true,
+
+    // Default look-and-feel (off in defaults, opted-in via theme-default.json / theme-custom.json)
+    showcase: false,
 
     // Newspaper look-and-feel
     dropcap: false,

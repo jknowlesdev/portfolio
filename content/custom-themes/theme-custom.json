@@ -21,10 +21,8 @@
 
   "flags": {
     "widgets": {
-      "geometric": true,
-      "scrollReveal": true,
-      "cursorTrail": true,
       "themeGallery": true,
+      "showcase": true,
       "dropcap": true,
       "newsticker": true,
       "classifieds": true,

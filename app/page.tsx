@@ -4,6 +4,7 @@ import { listThemes } from '@/lib/theme/server/theme-loader';
 import { Classifieds } from '@/lib/widgets/Classifieds';
 import { Dropcap } from '@/lib/widgets/Dropcap';
 import { Newsticker } from '@/lib/widgets/Newsticker';
+import { Showcase } from '@/lib/widgets/Showcase';
 import { ThemeGallery } from '@/lib/widgets/ThemeGallery';
 
 import '@/css/HomePage.css';
@@ -36,6 +37,7 @@ export default async function HomePage() {
           </Dropcap>
           <Classifieds />
           <ThemeGallery themes={themes} />
+          <Showcase />
           <Newsticker />
         </div>
       </div>
