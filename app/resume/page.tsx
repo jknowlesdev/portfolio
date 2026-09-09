@@ -16,7 +16,7 @@ export default async function Resume() {
       title={tResume('title')}
       description={tResume('description')}
       githubUrl={GITHUB_RESUME_URL}
-      githubLabel={tNavigation('viewOnGithub')}
+      githubLabel={tResume('viewOnGithub')}
       backLabel={tNavigation('backToHome')} />
   );
 }

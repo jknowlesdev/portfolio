@@ -38,9 +38,9 @@ export const defaultThemeTranslations: ThemeTranslations = {
   },
   Intro: {
     bio: '',
-    githubLabel: 'jknowlesdev/portfolio',
+    githubLabel: 'GitHub',
     name: 'Jason Knowles',
-    readmeLabel: 'README.md',
+    readmeLabel: 'About this project',
     resumeLabel: 'Resume',
     role: 'Senior Software Engineer',
     tagline: 'Shipping clean, scalable code for 8+ years. Demonstrates config-driven, multi-tenant architecture.',
@@ -65,10 +65,12 @@ export const defaultThemeTranslations: ThemeTranslations = {
   Readme: {
     description: 'How this portfolio is built — architecture, stack, and how to run it locally.',
     title: 'README',
+    viewOnGithub: 'README.md (View on GitHub)',
   },
   Resume: {
     description: 'Career overview, experience, and technical skills.',
     title: 'Resume',
+    viewOnGithub: 'RESUME.md (View on GitHub)',
   },
   Sections: {
     education: 'Education',

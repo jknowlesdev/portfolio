@@ -4,7 +4,7 @@ Personal portfolio and interactive demo site for Jason Knowles - a senior softwa
 
 Live at **[jknowlesdev.com](https://jknowlesdev.com)**.
 
-## What This Site Demonstrates
+## What This Portfolio Demonstrates
 
 The portfolio itself is the demo. It showcases a multi-tenant SaaS (Software as a Service) pattern. I was a primary developer and maintainer of this pattern, supporting nearly two dozen ed-tech clients, providing dynamic feature-based customization for each. See [my resume](https://jknowlesdev.com/resume) for more details.
 

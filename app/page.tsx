@@ -1,3 +1,8 @@
+import {
+  BookOpen as BookOpenIcon,
+  ExternalLink as ExternalLinkIcon,
+  FileText as FileTextIcon,
+} from 'lucide-react';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 
@@ -19,6 +24,8 @@ export default async function HomePage() {
   const tIntro = await getTranslations('Intro');
   const themes = await listThemes();
 
+  const divider = <span aria-hidden='true'>·</span>;
+
   return (
     <main className='HomePage flex-1 flex flex-col items-center justify-center px-8'>
       <div className='home-page-intro max-w-2xl'>
@@ -28,18 +35,21 @@ export default async function HomePage() {
         <p className='home-page-role text-xl mb-1'>
           {tIntro('role')}
         </p>
-        <p className='home-page-actions text-sm mb-6'>
-          <Link href={ROUTE_RESUME}>
+        <p className='home-page-actions text-sm mb-6 flex flex-wrap items-center gap-x-2'>
+          <Link href={ROUTE_RESUME} className='icon-link'>
+            <FileTextIcon className='icon-md' />
             {tIntro('resumeLabel')}
           </Link>
-          <span aria-hidden='true'>{' · '}</span>
-          <ExternalLink href={GITHUB_URL}>
-            {tIntro('githubLabel')}
-          </ExternalLink>
-          <span aria-hidden='true'>{' · '}</span>
-          <Link href={ROUTE_README}>
+          {divider}
+          <Link href={ROUTE_README} className='icon-link'>
+            <BookOpenIcon className='icon-md' />
             {tIntro('readmeLabel')}
           </Link>
+          {divider}
+          <ExternalLink href={GITHUB_URL} className='icon-link'>
+            {tIntro('githubLabel')}
+            <ExternalLinkIcon className='icon-sm' />
+          </ExternalLink>
         </p>
         <p className='home-page-tagline text-lg mb-6'>
           {tIntro('tagline')}

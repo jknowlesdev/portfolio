@@ -15,9 +15,8 @@ html.Portfolio body.portfolio-body {
       .home-page-actions {
         font-weight: var(--font-weight-medium);
 
-        a:hover {
-          font-weight: var(--font-weight-semibold);
-        }
+        /* Hover effect (bold text + thicker icon strokes) inherited from
+         * the shared .icon-link utility in globals.css. */
       }
     }
   }
