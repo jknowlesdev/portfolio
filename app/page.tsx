@@ -19,7 +19,7 @@ export default async function HomePage() {
   return (
     <main className='HomePage flex-1'>
       <div className='home-page-intro max-w-5xl mx-auto'>
-        <div className='home-page-text max-w-3xl'>
+        <div className='home-page-content max-w-3xl'>
           <h1 className='home-page-name text-5xl md:text-6xl font-bold mb-2'>
             {tIntro('name')}
           </h1>
@@ -34,10 +34,10 @@ export default async function HomePage() {
               {tIntro('bio')}
             </p>
           </Dropcap>
+          <Classifieds />
+          <ThemeGallery themes={themes} />
+          <Newsticker />
         </div>
-        <Classifieds />
-        <ThemeGallery themes={themes} />
-        <Newsticker />
       </div>
     </main>
   );
