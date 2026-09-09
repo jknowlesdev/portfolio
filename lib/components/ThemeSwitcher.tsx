@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { useActiveTheme, useThemeId } from '@/lib/theme/ThemeProvider';
@@ -18,6 +18,7 @@ export function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
   const activeThemeId = useThemeId();
   const activeTheme = useActiveTheme(themes);
   const currentThemeName = activeTheme?.displayName || activeThemeId;
+  const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -29,7 +30,7 @@ export function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
       params.set('theme', themeId);
     }
     const query = params.toString();
-    router.push(query ? `?${query}` : '/');
+    router.push(query ? `${pathname}?${query}` : pathname);
     router.refresh();
   };
 

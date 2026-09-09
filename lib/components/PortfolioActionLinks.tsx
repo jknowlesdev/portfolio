@@ -7,7 +7,7 @@ import {
   House as HomeIcon,
 } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { ExternalLink } from '@/lib/components/ExternalLink';
@@ -28,6 +28,7 @@ export function PortfolioActionLinks({ themes }: PortfolioActionLinksProps) {
   const tAria = useTranslations('Aria');
   const tIntro = useTranslations('Intro');
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const isCurrent = (route: string) => pathname === route;
 
@@ -39,6 +40,13 @@ export function PortfolioActionLinks({ themes }: PortfolioActionLinksProps) {
     return isCurrent(route) ? 'page' : undefined;
   };
 
+  // Preserve query params (e.g. ?theme=newspaper) across internal navigation
+  // so the active theme survives clicking Home/Resume/README links.
+  const withQuery = (route: string) => {
+    const query = searchParams.toString();
+    return query ? `${route}?${query}` : route;
+  };
+
   const divider = <span aria-hidden='true'>·</span>;
 
   return (
@@ -47,17 +55,17 @@ export function PortfolioActionLinks({ themes }: PortfolioActionLinksProps) {
       className='PortfolioActionLinks sticky top-0 z-40 bg-background -mx-8 px-8 pt-4 pb-4'>
       <div className='portfolio-action-links-container max-w-5xl mx-auto min-h-11 flex flex-wrap items-center justify-between gap-x-4 gap-y-4.5'>
         <p className='portfolio-action-links-row text-sm flex flex-wrap items-center gap-x-3'>
-          <Link href={ROUTE_HOME} className={linkClass(ROUTE_HOME)} aria-current={ariaCurrent(ROUTE_HOME)}>
+          <Link href={withQuery(ROUTE_HOME)} className={linkClass(ROUTE_HOME)} aria-current={ariaCurrent(ROUTE_HOME)}>
             <HomeIcon className='icon-md' />
             {tIntro('homeLabel')}
           </Link>
           {divider}
-          <Link href={ROUTE_RESUME} className={linkClass(ROUTE_RESUME)} aria-current={ariaCurrent(ROUTE_RESUME)}>
+          <Link href={withQuery(ROUTE_RESUME)} className={linkClass(ROUTE_RESUME)} aria-current={ariaCurrent(ROUTE_RESUME)}>
             <FileTextIcon className='icon-md' />
             {tIntro('resumeLabel')}
           </Link>
           {divider}
-          <Link href={ROUTE_README} className={linkClass(ROUTE_README)} aria-current={ariaCurrent(ROUTE_README)}>
+          <Link href={withQuery(ROUTE_README)} className={linkClass(ROUTE_README)} aria-current={ariaCurrent(ROUTE_README)}>
             <BookOpenIcon className='icon-md' />
             {tIntro('readmeLabel')}
           </Link>
