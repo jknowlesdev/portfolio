@@ -35,7 +35,7 @@ export function ThemeSwitcher({ themes }: ThemeSwitcherProps) {
   };
 
   return (
-    <div className='ThemeSwitcher flex flex-col items-end gap-1'>
+    <div className='ThemeSwitcher flex flex-col items-center lg:items-end gap-1'>
       <div role='group'
         aria-labelledby='theme-switcher-label'
         className='theme-switcher-nav flex items-center gap-1 rounded-full border p-1'>
