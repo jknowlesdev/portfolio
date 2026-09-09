@@ -11,8 +11,9 @@ export const defaultThemeTranslations: ThemeTranslations = {
   Aria: {
     customizationToggle: 'Toggle customization mode panel',
     loading: 'Loading',
+    primaryNav: 'Primary',
     switchToTheme: 'Switch to {theme} theme',
-    themeSwitcher: 'Theme',
+    themeSwitcher: 'Theme switcher',
   },
   Classifieds: {
     ad1Header: 'POSITION',
@@ -39,17 +40,12 @@ export const defaultThemeTranslations: ThemeTranslations = {
   Intro: {
     bio: '',
     githubLabel: 'GitHub',
+    homeLabel: 'Home',
     name: 'Jason Knowles',
     readmeLabel: 'About this project',
     resumeLabel: 'Resume',
     role: 'Senior Software Engineer',
     tagline: 'Shipping clean, scalable code for 8+ years. Demonstrates config-driven, multi-tenant architecture.',
-  },
-  Navigation: {
-    backToHome: 'Back to home',
-    themeSwitch: 'Theme',
-    viewConfig: 'View configuration',
-    viewOnGithub: 'View on GitHub',
   },
   Newsticker: {
     ariaLabel: 'Rolling headlines',
@@ -63,8 +59,8 @@ export const defaultThemeTranslations: ThemeTranslations = {
     title: '404',
   },
   Readme: {
-    description: 'How this portfolio is built — architecture, stack, and how to run it locally.',
-    title: 'README',
+    description: 'How this portfolio is built: architecture, stack, and how to run it locally.',
+    title: 'About this project',
     viewOnGithub: 'README.md (View on GitHub)',
   },
   Resume: {
@@ -88,7 +84,10 @@ export const defaultThemeTranslations: ThemeTranslations = {
   ThemeGallery: {
     ariaCardLink: 'Switch to {theme} theme',
     sectionSubtitle: 'Each theme has its own self-contained JSON configuration, fetched server-side and applied client-side. This modular architecture allows for quick expansion, easy customization, and clean separation of content from code.',
-    sectionTitle: 'About Portfolio Themes',
+    sectionTitle: 'Same portfolio, customizable themes',
+  },
+  ThemeSwitcher: {
+    caption: 'Current Theme: {theme}',
   },
   Widgets: {
     collapseLabel: 'Show less',

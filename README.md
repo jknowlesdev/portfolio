@@ -4,7 +4,7 @@ Personal portfolio and interactive demo site for Jason Knowles - a senior softwa
 
 Live at **[jknowlesdev.com](https://jknowlesdev.com)**.
 
-## What This Portfolio Demonstrates
+## What this portfolio demonstrates
 
 The portfolio itself is the demo. It showcases a multi-tenant SaaS (Software as a Service) pattern. I was a primary developer and maintainer of this pattern, supporting nearly two dozen ed-tech clients, providing dynamic feature-based customization for each. See [my resume](https://jknowlesdev.com/resume) for more details.
 
@@ -18,7 +18,7 @@ Key principles behind this pattern:
 
 ## Tech Stack
 
-### Currently implemented (MVP)
+### Currently Implemented (MVP)
 
 - **Framework:** Next.js 16 (App Router, Turbopack) with React 19
 - **Language:** TypeScript
@@ -30,7 +30,7 @@ Key principles behind this pattern:
 - **Interactive customization mode:** UI panel to toggle theme flags in real time and see the config-driven architecture in action
 - **Deployment:** Vercel
 
-### Coming soon
+### Coming Soon
 
 - **Data:** PostgreSQL (Neon) and Drizzle ORM - infrastructure ready (schema, migrations, and seed script wired up in `package.json`); utilization and REST communication with the front-end coming soon.
 - **Aggregate analytics:** visit and download counters, while maintaining a strict no-cookie, no per-user tracking policy

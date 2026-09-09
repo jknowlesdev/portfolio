@@ -22,7 +22,7 @@ import type { ReactNode } from 'react';
 
 import { Loader } from '@/lib/components/Loader';
 import { isDev } from '@/lib/env';
-import type { ThemeStylesOverride, ThemeFlags } from './theme.zod';
+import type { ThemeMetadata, ThemeStylesOverride, ThemeFlags } from './theme.zod';
 import { applyStyleOverrides, clearStyleOverrides } from './style-utils';
 
 type ThemeContextValue = {
@@ -86,4 +86,15 @@ export function useThemeStyles(): ThemeStylesOverride {
 
 export function useThemeFlags(): ThemeFlags {
   return useThemeContext().flags;
+}
+
+/**
+ * useActiveTheme - looks up the full metadata of the currently active theme
+ * from a themes list. Callers pass the themes list (usually from a
+ * server-provided prop). Returns undefined if the active theme id has no
+ * match in the list (should not happen under normal flow).
+ */
+export function useActiveTheme(themes: ThemeMetadata[]): ThemeMetadata | undefined {
+  const activeThemeId = useThemeId();
+  return themes.find((t) => t.id === activeThemeId);
 }
