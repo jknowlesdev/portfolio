@@ -1,5 +1,5 @@
 /**
- * Default translations — baseline copy used when no theme overrides a key.
+ * Default translations: baseline copy used when no theme overrides a key.
  * Per-theme JSON files override individual keys; unmentioned keys fall through.
  *
  * Sections + keys within each section are alphabetized for predictable lookup.
@@ -23,7 +23,7 @@ export const defaultThemeTranslations: ThemeTranslations = {
     ad3Header: 'EXPERIENCE',
     ad3Body: '8+ years front-end architecture; multi-tenant systems',
     ad4Header: 'NOTICE',
-    ad4Body: 'Runs only when a theme enables the classifieds widget.',
+    ad4Body: 'Every widget, section, and feature is opt-in per theme via JSON flag.',
     sectionTitle: 'Classifieds Section Typically Seen in Newspapers',
     sectionSubtitle: 'A portfolio widget demonstrating self-classifieds in classic newspaper advertisement form.',
   },
@@ -74,6 +74,28 @@ export const defaultThemeTranslations: ThemeTranslations = {
     projects: 'Personal Projects',
     skills: 'Technical Skills',
     summary: 'Summary',
+  },
+  Showcase: {
+    sectionTitle: 'The engineering behind this portfolio',
+    readMoreLabel: 'See how it\'s built',
+    card1Icon: 'palette',
+    card1Label: 'Themes',
+    card1Description: 'Same portfolio, different themes: try switching to see the design adapt.',
+    card2Icon: 'sliders',
+    card2Label: 'Config-driven design',
+    card2Description: 'Every theme feature is a JSON toggle: the config drives what you see.',
+    card3Icon: 'puzzle',
+    card3Label: 'Multi-tenant architecture',
+    card3Description: 'One codebase, per-tenant customization: the pattern that scales.',
+    card4Icon: 'accessibility',
+    card4Label: 'Accessibility-first',
+    card4Description: 'Every component built to pass WCAG / ARIA audits at design stage.',
+    card5Icon: 'layers',
+    card5Label: 'Reusable widgets',
+    card5Description: 'Widgets opt into themes via flags: write once, activate anywhere.',
+    card6Icon: 'book-open',
+    card6Label: 'How it\'s built',
+    card6Description: 'Full architecture writeup and source on GitHub. See the About page for more details.',
   },
   Stats: {
     mostViewedTheme: 'most viewed theme',

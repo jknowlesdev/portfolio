@@ -50,6 +50,7 @@ export const themeSchema = z.object({
     Readme: translationSection,
     Resume: translationSection,
     Sections: translationSection,
+    Showcase: translationSection,
     Stats: translationSection,
     ThemeGallery: translationSection,
     ThemeSwitcher: translationSection,
@@ -66,11 +67,11 @@ export const themeSchema = z.object({
       showViewConfig: z.boolean(),
     }),
     widgets: z.object({
-      // Default look-and-feel
-      geometric: z.boolean(),          // interactive shape composition
-      scrollReveal: z.boolean(),       // scroll-triggered fade/slide animations
-      cursorTrail: z.boolean(),        // subtle cursor effect
+      // Global
       themeGallery: z.boolean(),       // card-based gallery of other themes with click-to-switch
+
+      // Default look-and-feel
+      showcase: z.boolean(),           // grid of icon + label + description cards
 
       // Newspaper look-and-feel
       dropcap: z.boolean(),            // ornate first-letter + pull-quote reveal
@@ -119,6 +120,7 @@ export const themeOverrideSchema = z.object({
     Readme: translationSection.optional(),
     Resume: translationSection.optional(),
     Sections: translationSection.optional(),
+    Showcase: translationSection.optional(),
     Stats: translationSection.optional(),
     ThemeGallery: translationSection.optional(),
     ThemeSwitcher: translationSection.optional(),
@@ -135,11 +137,11 @@ export const themeOverrideSchema = z.object({
       showViewConfig: z.boolean().optional(),
     }).partial().optional(),
     widgets: z.object({
-      // Default look-and-feel
-      geometric: z.boolean().optional(),
-      scrollReveal: z.boolean().optional(),
-      cursorTrail: z.boolean().optional(),
+      // Global
       themeGallery: z.boolean().optional(),
+
+      // Default look-and-feel
+      showcase: z.boolean().optional(),
 
       // Newspaper look-and-feel
       dropcap: z.boolean().optional(),

@@ -36,7 +36,7 @@ export async function MarkdownPage({
   const content = await fs.readFile(filePath, 'utf-8');
 
   return (
-    <main className='MarkdownPage flex-1 pb-16'>
+    <main className='MarkdownPage flex-1'>
       <div className='markdown-page-container max-w-5xl mx-auto'>
         <div className='markdown-page-content-wrapper max-w-3xl'>
           <header className='markdown-page-header'>
