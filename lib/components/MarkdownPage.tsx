@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 
-import { ChevronLeft, ExternalLink as ExternalLinkIcon } from 'lucide-react';
+import { ChevronLeft as ChevronLeftIcon, ExternalLink as ExternalLinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'; /* GitHub Flavored Markdown plugin for ReactMarkdown */
@@ -44,7 +44,7 @@ export async function MarkdownPage({
       <div className='markdown-page-container max-w-3xl mx-auto'>
         <nav className='markdown-page-nav' aria-label={backLabel}>
           <Link href={ROUTE_HOME} className='icon-link markdown-page-back'>
-            <ChevronLeft className='icon-md' />
+            <ChevronLeftIcon className='icon-md' />
             {backLabel}
           </Link>
         </nav>

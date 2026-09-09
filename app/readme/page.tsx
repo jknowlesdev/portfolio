@@ -16,7 +16,7 @@ export default async function Readme() {
       title={tReadme('title')}
       description={tReadme('description')}
       githubUrl={GITHUB_README_URL}
-      githubLabel={tNavigation('viewOnGithub')}
+      githubLabel={tReadme('viewOnGithub')}
       backLabel={tNavigation('backToHome')} />
   );
 }

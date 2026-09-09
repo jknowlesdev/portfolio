@@ -121,6 +121,21 @@ html.Portfolio body.portfolio-body {
     }
   }
 
+  /* Link with an adjacent icon in an inline-flex row. On hover: text goes
+   * semibold and lucide icon strokes thicken for coordinated emphasis.
+   */
+  .icon-link {
+    @apply inline-flex items-center gap-1 text-sm;
+
+    &:hover {
+      font-weight: var(--font-weight-semibold);
+    }
+
+    &:hover svg {
+      stroke-width: 2.25;
+    }
+  }
+
   button {
     cursor: pointer;
   }
@@ -157,14 +172,4 @@ html.Portfolio body.portfolio-body {
   .icon-md { width: var(--icon-size-md); height: var(--icon-size-md); }
   .icon-lg { width: var(--icon-size-lg); height: var(--icon-size-lg); }
   .icon-xl { width: var(--icon-size-xl); height: var(--icon-size-xl); }
-
-  /* Link (or any interactive element) containing an inline icon adjacent to text.
-   * Icon and text sit in an inline-flex row with tight gap. Text underline
-   * inherits from the global `a` rule; icon sits alongside as a decorative prefix.
-   */
-  .icon-link {
-    @apply inline-flex items-center gap-1 text-sm;
-
-    /* &:hover {} */
-  }
 }
