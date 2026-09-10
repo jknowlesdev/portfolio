@@ -9,7 +9,6 @@ import type { ThemeTranslations } from './theme.zod';
 
 export const defaultThemeTranslations: ThemeTranslations = {
   Aria: {
-    customizationToggle: 'Toggle customization mode panel',
     loading: 'Loading',
     primaryNav: 'Primary',
     switchToTheme: 'Switch to {theme} theme',
@@ -52,13 +51,6 @@ export const defaultThemeTranslations: ThemeTranslations = {
     ad4Body: 'Every widget, section, and feature is opt-in per theme via JSON flag.',
     sectionTitle: 'Classifieds Section Typically Seen in Newspapers',
     sectionSubtitle: 'A portfolio widget demonstrating self-classifieds in classic newspaper advertisement form.',
-  },
-  Customization: {
-    closeButton: 'Close',
-    panelDescription: 'Toggle features on and off to see how this theme is built. Each option maps to a value in the theme JSON at content/custom-themes/theme-{id}.json.',
-    panelTitle: 'Customization mode',
-    resetButton: 'Reset to theme defaults',
-    toggleLabel: 'Customize',
   },
   Footer: {
     privacyNote: 'Only counts total visits and downloads. No cookies, no personal data, no tracking across visits.',

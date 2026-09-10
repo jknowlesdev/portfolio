@@ -44,7 +44,6 @@ export const themeSchema = z.object({
     AsciiMessage: translationSection,
     Classifieds: translationSection,
     CommandPrompt: translationSection,
-    Customization: translationSection,
     Footer: translationSection,
     Intro: translationSection,
     Newsticker: translationSection,
@@ -66,7 +65,6 @@ export const themeSchema = z.object({
       showTagline: z.boolean(),
       widgetsDefaultExpanded: z.boolean(),
       showThemeSwitcher: z.boolean(),
-      showViewConfig: z.boolean(),
     }),
     widgets: z.object({
       // Global
@@ -116,7 +114,6 @@ export const themeOverrideSchema = z.object({
     AsciiMessage: translationSection.optional(),
     Classifieds: translationSection.optional(),
     CommandPrompt: translationSection.optional(),
-    Customization: translationSection.optional(),
     Footer: translationSection.optional(),
     Intro: translationSection.optional(),
     Newsticker: translationSection.optional(),
@@ -138,7 +135,6 @@ export const themeOverrideSchema = z.object({
       showTagline: z.boolean().optional(),
       widgetsDefaultExpanded: z.boolean().optional(),
       showThemeSwitcher: z.boolean().optional(),
-      showViewConfig: z.boolean().optional(),
     }).partial().optional(),
     widgets: z.object({
       // Global
