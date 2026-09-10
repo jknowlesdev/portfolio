@@ -20,7 +20,7 @@ import { useSearchParams } from 'next/navigation';
 import { useMessages } from 'next-intl';
 
 import { getIndexedTranslationEntries } from '@/i18n/getIndexedTranslationEntries';
-import { iconRegistry } from '@/lib/icons';
+import { iconRegistry } from '@/lib/iconRegistry';
 import { useThemeFlags } from '@/lib/theme/ThemeProvider';
 import { ROUTE_README } from '@/lib/urls';
 
