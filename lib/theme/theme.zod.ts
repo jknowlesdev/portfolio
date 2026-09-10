@@ -41,6 +41,7 @@ export const themeSchema = z.object({
 
   translations: z.object({
     Aria: translationSection,
+    AsciiMessage: translationSection,
     Classifieds: translationSection,
     CommandPrompt: translationSection,
     Customization: translationSection,
@@ -82,7 +83,7 @@ export const themeSchema = z.object({
       // Terminal look-and-feel
       commandPrompt: z.boolean(),      // interactive prompt (input + output log)
       typewriterIntro: z.boolean(),    // typewriter text reveal for the intro
-      asciiSkills: z.boolean(),        // skills displayed as ASCII bar chart
+      asciiMessage: z.boolean(),       // decorative bordered box with ASCII-style welcome message
     }),
   }),
 });
@@ -112,6 +113,7 @@ export const themeOverrideSchema = z.object({
 
   translations: z.object({
     Aria: translationSection.optional(),
+    AsciiMessage: translationSection.optional(),
     Classifieds: translationSection.optional(),
     CommandPrompt: translationSection.optional(),
     Customization: translationSection.optional(),
@@ -153,7 +155,7 @@ export const themeOverrideSchema = z.object({
       // Terminal look-and-feel
       commandPrompt: z.boolean().optional(),
       typewriterIntro: z.boolean().optional(),
-      asciiSkills: z.boolean().optional(),
+      asciiMessage: z.boolean().optional(),
     }).partial().optional(),
   }).partial().optional(),
 });

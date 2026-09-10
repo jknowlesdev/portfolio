@@ -28,7 +28,7 @@
       "classifieds": true,
       "commandPrompt": true,
       "typewriterIntro": true,
-      "asciiSkills": true
+      "asciiMessage": true
     }
   }
 }

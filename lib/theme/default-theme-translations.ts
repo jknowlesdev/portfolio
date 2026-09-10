@@ -26,7 +26,16 @@ export const defaultThemeTranslations: ThemeTranslations = {
     command4Prompt: 'theme --current',
     command4Output: 'terminal',
     command5Prompt: 'flags --active',
-    command5Output: 'themeGallery, commandPrompt, typewriterIntro, asciiSkills',
+    command5Output: 'themeGallery, commandPrompt, asciiMessage',
+  },
+  AsciiMessage: {
+    ariaLabel: 'Terminal welcome message',
+    title: 'jknowlesdev [portfolio]',
+    line1: 'welcome, visitor.',
+    line2: 'senior software engineer · 8+ years',
+    line3: 'multi-tenant systems · accessibility-first',
+    line4: 'currently exploring full-stack roles',
+    line5: 'see /readme for more details',
   },
   Classifieds: {
     ad1Header: 'POSITION',
