@@ -16,7 +16,11 @@ export const defaultThemeTranslations: ThemeTranslations = {
     themeSwitcher: 'Theme switcher',
   },
   CommandPrompt: {
-    ariaLabel: 'Terminal demo running example commands',
+    ariaLabel: 'Terminal demo of example commands',
+    playIcon: 'play',
+    playLabel: 'Play terminal demo',
+    stopIcon: 'pause',
+    stopLabel: 'Stop terminal demo',
     command1Prompt: 'whoami',
     command1Output: 'jason.knowles',
     command2Prompt: 'cat skills.txt | head -3',
