@@ -22,7 +22,7 @@ export function Intro() {
 
   return (
     <>
-      <h1 className='home-page-name text-5xl md:text-6xl font-bold mb-2'>
+      <h1 className='home-page-name font-bold mb-2'>
         {tIntro('name')}
       </h1>
       <p className='home-page-role text-xl mb-6'>
