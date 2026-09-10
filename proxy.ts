@@ -1,5 +1,5 @@
 /**
- * Proxy — runs before every page request. Composes per-concern helpers
+ * Proxy: runs before every page request. Composes per-concern helpers
  * (e.g., theme header injection) into a single response passed through Next.
  *
  * Each concern is factored into its own helper function so new proxy

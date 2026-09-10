@@ -19,6 +19,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { Loader } from '@/lib/components/Loader';
 import { isDev } from '@/lib/env';
@@ -44,6 +45,9 @@ type ThemeProviderProps = {
 
 export function ThemeProvider({ themeId, styles, flags, metadata, children }: ThemeProviderProps) {
   const [initialReady, setInitialReady] = useState(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const urlThemeId = searchParams.get('theme') ?? 'default';
 
   useEffect(() => {
     // Dev-only visibility for theme switching. Kept out of prod so visitors do not see internals in their console.
@@ -57,6 +61,16 @@ export function ThemeProvider({ themeId, styles, flags, metadata, children }: Th
       setInitialReady(true);
     }
   }, [themeId, styles, metadata, initialReady]);
+
+  // Sync theme with URL on browser back/forward. Without this, the client-side
+  // Router Cache can serve stale React Server Component (RSC) payloads — the
+  // URL updates to the target theme (e.g. ?theme=terminal) but the rendered
+  // UI stays on the previous one, leaving URL and content out of sync.
+  useEffect(() => {
+    if (urlThemeId !== themeId) {
+      router.refresh();
+    }
+  }, [urlThemeId, themeId, router]);
 
   return (
     <ThemeContext.Provider value={{ themeId, styles, flags, metadata }}>
