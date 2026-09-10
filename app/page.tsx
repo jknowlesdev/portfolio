@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { listThemes } from '@/lib/theme/server/theme-loader';
 import { Classifieds } from '@/lib/widgets/Classifieds';
+import { CommandPrompt } from '@/lib/widgets/CommandPrompt';
 import { Dropcap } from '@/lib/widgets/Dropcap';
 import { Newsticker } from '@/lib/widgets/Newsticker';
 import { Showcase } from '@/lib/widgets/Showcase';
@@ -35,6 +36,7 @@ export default async function HomePage() {
               {tIntro('bio')}
             </p>
           </Dropcap>
+          <CommandPrompt />
           <Classifieds />
           <ThemeGallery themes={themes} />
           <Showcase />
