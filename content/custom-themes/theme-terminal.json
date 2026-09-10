@@ -34,7 +34,7 @@
   "flags": {
     "widgets": {
       "commandPrompt": true,
-      "typewriterIntro": false,
+      "typewriterIntro": true,
       "asciiMessage": true
     }
   }

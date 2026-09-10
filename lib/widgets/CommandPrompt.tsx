@@ -20,31 +20,30 @@ const CLEAR_PAUSE_MS = 250;     // pause between clearing and starting next comm
 type SessionMode = 'running' | 'done';
 
 /**
- * CommandPrompt — pre-scripted terminal demo. On mount, auto-types a sequence
- * of artificial commands character-by-character and renders their output.
- * Runs through the sequence once, then rests on the first (command1Prompt)
- * translation (e.g. whoami) so the terminal reads as a completed session.
+ * CommandPrompt — pre-scripted terminal demo. Renders in a resting state
+ * showing the first command (e.g. whoami) as if a completed session; viewers
+ * trigger playback via the play button in the top-right.
  *
- * A play/stop toggle in the top-right lets viewers restart or interrupt the
- * demo. Stop cancels the animation and jumps to the resting state.
- * Play restarts the sequence from the top.
+ * On play, each command is typed character-by-character and its output is
+ * revealed; when finished, the terminal lands back on the resting state.
+ * Stop cancels mid-animation and jumps straight to the resting state.
  *
  * Flag-gated on flags.widgets.commandPrompt. Commands + control-button
  * icons are all discovered from translations.
  *
- * Honors prefers-reduced-motion: skips the animation and renders the
- * resting state immediately.
+ * Honors prefers-reduced-motion: if a viewer clicks Play, the animation
+ * is skipped and the resting state is restored immediately.
  */
 export function CommandPrompt() {
   const flags = useThemeFlags();
   const messages = useMessages() as CommandPromptMessages;
 
-  const [mode, setMode] = useState<SessionMode>('running');
-  const [typedPrompt, setTypedPrompt] = useState('');
-  const [output, setOutput] = useState<string | null>(null);
-
   const section = messages.CommandPrompt;
   const commands = getIndexedTranslationEntries(section, 'command', 'Prompt', ['Output']);
+
+  const [mode, setMode] = useState<SessionMode>('done');
+  const [typedPrompt, setTypedPrompt] = useState(() => commands[0]?.anchor || '');
+  const [output, setOutput] = useState<string | null>(() => commands[0]?.siblings.Output || null);
 
   useEffect(() => {
     if (mode !== 'running' || !flags.widgets.commandPrompt || commands.length === 0) {
