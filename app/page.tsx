@@ -1,4 +1,5 @@
 import { listThemes } from '@/lib/theme/server/theme-loader';
+import { AsciiMessage } from '@/lib/widgets/AsciiMessage';
 import { Classifieds } from '@/lib/widgets/Classifieds';
 import { CommandPrompt } from '@/lib/widgets/CommandPrompt';
 import { Intro } from '@/lib/widgets/Intro';
@@ -24,6 +25,7 @@ export default async function HomePage() {
           <CommandPrompt />
           <Classifieds />
           <ThemeGallery themes={themes} />
+          <AsciiMessage />
           <Showcase />
           <Newsticker />
         </div>

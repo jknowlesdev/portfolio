@@ -38,6 +38,6 @@ export const defaultThemeFlags: ThemeFlags = {
     // Terminal look-and-feel
     commandPrompt: false,
     typewriterIntro: false,
-    asciiSkills: false,
+    asciiMessage: false,
   },
 };
