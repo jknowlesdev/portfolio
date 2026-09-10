@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-import { useTypewriter } from '@/lib/hooks/useTypewriter';
+import { useTextReveal } from '@/lib/hooks/useTextReveal';
 import { useThemeFlags } from '@/lib/theme/ThemeProvider';
 import { Dropcap } from '@/lib/widgets/Dropcap';
 
@@ -18,7 +18,7 @@ export function Intro() {
   const flags = useThemeFlags();
   const typewriterIntro = !!flags.widgets.typewriterIntro;
 
-  const tagline = useTypewriter(tIntro('tagline'), { active: typewriterIntro });
+  const tagline = useTextReveal(tIntro('tagline'), { active: typewriterIntro });
 
   return (
     <>
@@ -29,7 +29,7 @@ export function Intro() {
         {tIntro('role')}
       </p>
       <p className='home-page-tagline text-lg mb-6'>
-        {tagline.displayed}
+        {tagline.text}
       </p>
       <Dropcap>
         <p className='home-page-bio text-base'>
