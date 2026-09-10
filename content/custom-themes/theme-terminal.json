@@ -30,7 +30,7 @@
   "flags": {
     "widgets": {
       "commandPrompt": true,
-      "typewriterIntro": true,
+      "typewriterIntro": false,
       "asciiSkills": true
     }
   }
