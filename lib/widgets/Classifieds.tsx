@@ -1,14 +1,3 @@
-/**
- * Classifieds — newspaper-style Situations Wanted section.
- *
- * Flag-gated on flags.widgets.classifieds. Ads are discovered dynamically
- * via getIndexedTranslationEntries — adding a new ad = add adNHeader +
- * adNBody to translations; no component change needed.
- *
- * Client component because it reads a flag from ThemeProvider context and
- * pulls messages via next-intl's useMessages hook.
- */
-
 'use client';
 
 import { useMessages } from 'next-intl';
@@ -20,6 +9,16 @@ import '@/css/Classifieds.css';
 
 type ClassifiedsMessages = { Classifieds: Record<string, string> };
 
+/**
+ * Classifieds — newspaper-style Situations Wanted section.
+ *
+ * Flag-gated on flags.widgets.classifieds. Ads are discovered dynamically
+ * via getIndexedTranslationEntries — adding a new ad = add adNHeader +
+ * adNBody to translations; no component change needed.
+ *
+ * Client component because it reads a flag from ThemeProvider context and
+ * pulls messages via next-intl's useMessages hook.
+ */
 export function Classifieds() {
   const flags = useThemeFlags();
   const messages = useMessages() as ClassifiedsMessages;
