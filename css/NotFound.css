@@ -2,7 +2,7 @@ html.Portfolio body.portfolio-body {
   .NotFound {
     .not-found-container {
       .not-found-title {
-        font-size: var(--text-heading-1);
+        font-size: var(--text-7xl);
         font-weight: var(--font-weight-bold);
         margin-bottom: 0.5rem;
       }

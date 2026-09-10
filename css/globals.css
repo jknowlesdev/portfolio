@@ -37,10 +37,9 @@
   --font-heading: var(--font-geist-sans);
   --font-body: var(--font-geist-sans);
 
-  /* text (font sizes) */
-  --text-heading-1: clamp(2.5rem, 6vw, 4rem);
-  --text-heading-2: clamp(1.75rem, 4vw, 2.5rem);
-  --text-heading-3: clamp(1.25rem, 2.5vw, 1.5rem);
+  /* text (font sizes) — default to Tailwind */
+  --text-heading-1: var(--text-4xl);  /* 2.25rem — page title */
+  --text-heading-2: var(--text-2xl);  /* 1.5rem — section heading */
   --text-body: clamp(1rem, 1.25vw, 1.125rem);
   --text-sm: 0.875rem;    /* ~14px, theme-overridable */
   --text-2xs: 0.6875rem;  /* ~11px, annotation-scale */
@@ -76,7 +75,6 @@
 
   --text-heading-1: var(--text-heading-1);
   --text-heading-2: var(--text-heading-2);
-  --text-heading-3: var(--text-heading-3);
   --text-body: var(--text-body);
   --text-sm: var(--text-sm);
   --text-2xs: var(--text-2xs);

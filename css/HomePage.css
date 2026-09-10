@@ -7,6 +7,11 @@ html.Portfolio body.portfolio-body {
       min-width: 0;
       width: 100%;
 
+      .home-page-name {
+        font-size: var(--text-heading-1);
+        font-weight: 700;
+      }
+
       .home-page-role {
         color: var(--color-muted);
         font-weight: var(--font-weight-medium);
