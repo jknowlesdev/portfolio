@@ -27,15 +27,18 @@ Key principles behind this pattern:
 - **i18n:** next-intl (each theme has its own key-value phrasing, currently English for all themes)
 - **Validation:** Zod (theme schema)
 - **Markdown:** react-markdown and remark-gfm (for the /resume and /readme routes)
-- **Interactive customization mode:** UI panel to toggle theme flags in real time and see the config-driven architecture in action
 - **Deployment:** Vercel
 
 ### Coming Soon
 
+- **Config-driven widget order:** per-theme widget ordering via a JSON array, gated by a feature flag so opted-out themes keep the default order
+- **Interactive customization mode:** UI panel to toggle theme widgets on/off at runtime and see the config-driven architecture in action
+- **Auth and admin surface:** login-gated UI for editing theme JSON through a web app, demonstrating the "admin per tenant" pattern the architecture is built for
 - **Data:** PostgreSQL (Neon) and Drizzle ORM - infrastructure ready (schema, migrations, and seed script wired up in `package.json`); utilization and REST communication with the front-end coming soon.
-- **Aggregate analytics:** visit and download counters, while maintaining a strict no-cookie, no per-user tracking policy
+- **REST API:** `/api/themes` and `/api/themes/[id]` endpoints exposing themes as a first-class resource for external consumers
 - **SEO metadata:** Open Graph tags, canonical URLs, robots.txt, sitemap.xml
 - **Multi-language support:** extending each theme's key-value phrasing to support multiple languages, so users can choose their language within any theme
+- **And more:** additional widgets, themes, and features as this portfolio evolves
 
 ## Getting Started
 

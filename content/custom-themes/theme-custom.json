@@ -1,7 +1,7 @@
 {
   "id": "custom",
   "displayName": "Custom",
-  "description": "Every widget rendered. Configurable via Customization Mode.",
+  "description": "Every widget enabled. Interactive customization panel coming soon.",
   "favicon": "⚙️",
   "order": 4,
 
@@ -21,7 +21,6 @@
 
   "flags": {
     "widgets": {
-      "themeGallery": true,
       "showcase": true,
       "dropcap": true,
       "newsticker": true,

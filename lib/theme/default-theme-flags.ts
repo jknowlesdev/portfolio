@@ -21,7 +21,6 @@ export const defaultThemeFlags: ThemeFlags = {
     showTagline: true,
     widgetsDefaultExpanded: false,
     showThemeSwitcher: true,
-    showViewConfig: true,
   },
   widgets: {
     // Global (on across all themes unless the theme JSON overrides to false)
