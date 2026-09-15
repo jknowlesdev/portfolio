@@ -1,6 +1,6 @@
 # JASON KNOWLES
 
-Versatile Senior Software Engineer specializing in scalable front-end architecture (including converting legacy stacks into modernized codebases). Exploring full-stack opportunities to further expand across the JavaScript / TypeScript ecosystem.
+Versatile Senior Software Engineer specializing in scalable frontend architecture (including converting legacy stacks into modernized codebases). Exploring full-stack opportunities to further expand across the JavaScript / TypeScript ecosystem.
 
 Location: Worcester, MA area (open to remote) ·
 Email: jknowlesdev@gmail.com ·
@@ -10,76 +10,67 @@ Portfolio: jknowlesdev.com
 
 ## EXPERIENCE
 
-**EvoText (Content2Classroom / C2C)**, Carlisle MA — *Software Engineer*  
-JUNE 2021 - PRESENT  
-**Frontend** · React, Semantic UI React, TypeScript, JavaScript, MobX, jQuery, Kendo UI  
-**Backend** · Spring Boot, Java, Hibernate, Liquibase, SQL
+**EvoText (Content2Classroom / C2C)**, Carlisle, MA (Remote) | *Software Engineer*  
+JUNE 2021 - PRESENT
 
-- Multi-tenant ed-tech Software as a Service (SaaS) platform supporting millions of users, including publishers, administrators, teachers and students.
-- Pivotal in shaping and maintaining a multi-tenant SaaS pattern used to serve nearly two dozen ed-tech publishers (clients).
-- Configuration-driven themes: per-publisher JSON + CSS bundles for branding, layout, and content.
-- Flag-driven widgets: features opt-in per publisher via boolean flags; every widget written once and adapts to any publisher.
-- Consolidated per-tenant standalone repos into a single dynamic-tenant repo — accelerated new themed-tenant delivery from 5-10 days to 1-2 days, freeing engineering capacity from per-tenant maintenance for feature development.
-- Set team-wide discipline (canonical defaults, no one-off flags, cross-repo audits) that keeps the config surface coherent as publishers grow.
-- Built the front-end of the course/standards reporting subsystem and the gradebook architecture foundation.
-- Modernized the legacy lesson-delivery player from jQuery / Kendo UI into a modern React / MobX codebase, unlocking accessibility, testability, and extensibility.
-- Accessibility-first: every new component planned and built to pass WCAG / ARIA audits at the design stage.
+Multi-tenant EdTech SaaS platform driven by a React / JavaScript / MobX frontend and a Spring Boot / Java / Hibernate backend. Nearly two dozen publisher clients digitize their educational content on the platform and distribute it to K-12 districts and schools, reaching millions of users.
+
+- Shaped and evolved C2C's configuration-driven multi-tenant SaaS pattern, built on per-publisher themes and flag-based features. Each theme defines CSS variables (branding), i18n translations (text), and feature-behavior flags.
+- Consolidated per-tenant standalone repositories into a single dynamic-tenant codebase, cutting new themed-tenant delivery from 5-10 days to 1-2 days, freeing the team to focus on new features rather than continuous per-tenant maintenance.
+- Modernized the legacy lesson-delivery player from jQuery / Kendo UI into a modern React / MobX codebase, supporting better accessibility, modularity, and maintainability.
+- Accessibility-first: every new component planned and built to pass WCAG 2.2 AA audits at implementation, saving hours of post-audit remediation.
 
 ---
 
-**Aveniros**, Woburn MA — *Software Engineer*  
-DECEMBER 2018 - JUNE 2021  
-**Frontend** · Angular, Angular Material, RxJS, React, TypeScript, JavaScript, jQuery  
-**Backend** · Spring Boot, Tomcat, SQL, Firebase
+**Aveniros**, Woburn, MA | *Software Engineer*  
+DECEMBER 2018 - JUNE 2021
 
-- K-12 engineering startup partnered with EvoText.
-- Primary front-end engineer for Egypt's national digital assessment platform (via Pearson / Egyptian Ministry of Education) - built the bilingual English/Arabic tablet portal serving hundreds of thousands of concurrent students.
-- Modernized multiple legacy AngularJS/jQuery apps into modern Angular and React.
+K-12 engineering startup and partner of major EdTech vendors such as Pearson, Learnosity, and EvoText. Delivered EdTech software for both domestic and international clients; modernized legacy AngularJS and jQuery codebases into modern Angular.
+
+- Served as primary frontend engineer across Aveniros's major projects, spanning both domestic and international EdTech clients.
+- Built a Dockerized bilingual English and Arabic tablet portal frontend for Egypt's national exam reform (a Pearson contract with the Egyptian Ministry of Education), with RTL layout, implemented using idiomatic Angular (TypeScript, Material, RxJS, JSON-driven i18n pipe), supporting hundreds of thousands of concurrent students.
+- Modernized several legacy AngularJS and jQuery codebases into modern Angular with TypeScript; integrated with Spring Boot backend via REST APIs.
+- Selected for a challenging embedded contract at EvoText in August 2020, joining a team of senior engineers to expand the multi-tenant SaaS platform known today as C2C; recruited directly as the platform scaled.
 
 ## EDUCATION
 
-**Worcester State University**, Worcester MA — *B.S. Computer Science*  
+**Worcester State University**, Worcester, MA | *Bachelor of Science in Computer Science*  
 2015 - 2018
 
-Concentration in Software Development. Dean's List 2015-2018.
+Concentration in Software Development. Dean's List 2015 to 2018.
 
 ---
 
-**Ampath Informatics** (Remote) — *Software Developer Intern (Computer Science Capstone)*  
-JANUARY 2018 - SEPTEMBER 2018  
-**Frontend** · Angular, RxJS, PouchDB (IndexedDB)  
-**Backend** · Spring Boot, Tomcat, SQL
+**Ampath Informatics** (Remote) | *Software Developer Intern (Computer Science Capstone)*  
+JANUARY 2018 - SEPTEMBER 2018
 
-- Led a team of classmates to build a proof-of-concept, offline-first extension for OpenMRS - demonstrating that medical records could be accessed in the field without continuous online connectivity.
-- First professional contribution to a live open-source codebase; formative real-world engineering preparation covering REST APIs, MVC architecture, design patterns, and full agile process.
+- Led a team of classmates to build a proof-of-concept offline-first extension for Ampath's medical record system (powered by OpenMRS), proving medical records accessible in the field without continuous connectivity. Built with Angular 2+, RxJS, and PouchDB, with client-side CryptoJS encryption for HIPAA compliance.
+- First professional contribution to a live open-source codebase; hands-on exposure to component-based architecture, REST APIs, state management, separation of concerns, and agile process.
 
 ## PERSONAL PROJECT
 
-**jknowlesdev.com** — *Interactive Portfolio & Demo*  
-**Frontend** · Next.js, React, TypeScript, Tailwind CSS  
-**Backend / Data** · PostgreSQL (Neon), Drizzle ORM
+**jknowlesdev.com** | *Interactive Portfolio & Demo*
 
-- Multi-tenant SaaS pattern - configuration-driven themes and flag-gated widgets, a working example of the modular pattern I helped shape for C2C.
+This portfolio implements Content2Classroom's multi-tenant SaaS pattern on a modern stack, proving cross-framework portability while staying current with the latest technologies and adhering to WCAG 2.2 AA best practices.
+
+- **Configuration-driven themes:** each theme is a JSON file specifying CSS variables for branding, next-intl for text, and flag-based widgets; themes are data, not code.
+- **Next.js 16 (App Router and React 19):** middleware resolves themes per request, server components load and merge JSON configurations, React 19 client components drive interactivity. Privacy-first with no cookies or third-party tracking.
+- **Tailwind CSS v4:** primary styling framework with per-theme CSS variable overrides.
+- **TypeScript and Zod:** single source of truth; Zod schemas derive TypeScript types and enforce validation at trust boundaries.
+- **next-intl:** per-theme translation bundles, ready for multi-language expansion.
+- **PostgreSQL with Neon and Drizzle ORM:** backend scaffolded (schema, migrations, seed script wired); ready to populate. Live on Vercel.
 
 ## TECHNOLOGIES
 
 - **Languages** · JavaScript, TypeScript, Java
-- **Frontend** · React, MobX, Angular, Next.js
-- **Backend** · Node.js, NestJS, Spring Boot
+- **Frontend** · React, MobX, Semantic UI React, Angular, Angular Material, RxJS, Next.js
+- **Backend** · Node.js, NestJS, Spring Boot, Tomcat
 - **Styling** · CSS, SCSS, LESS, Tailwind CSS
-- **Data** · PostgreSQL, SQL, MongoDB, Hibernate, Liquibase
-- **Build** · Vite, Turbopack, Webpack
+- **Data** · PostgreSQL, Neon, SQL, MongoDB, Drizzle ORM, Hibernate, Liquibase, Firebase, PouchDB
+- **Validation** · Zod
+- **i18n** · next-intl
+- **Build** · Vite, Turbopack, Webpack, Rollup
 - **Deployment** · Docker, AWS, Vercel
 - **Source Control** · Git, Bitbucket, GitHub
 - **IDEs** · VS Code, Eclipse / Spring Tool Suite
-- **Legacy** · AngularJS, jQuery, Kendo UI, Rollup, CRACO
-
-## PRACTICES
-
-- **Accessibility-first development** (WCAG / ARIA, keyboard navigation, screen reader support)
-- **Multi-tenant SaaS architecture**
-- **Configuration-driven / flag-driven development**
-- **Internationalization** (i18n)
-- **Legacy modernization**
-- **Code review culture**
-- **Mentorship**
+- **Legacy** · AngularJS, jQuery, Kendo UI, CRACO
