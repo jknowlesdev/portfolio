@@ -1,12 +1,12 @@
 # jknowlesdev.com
 
-Personal portfolio and interactive demo site for Jason Knowles - a senior software engineer with 8+ years of front-end architecture experience.
+Personal portfolio and interactive demo site for Jason Knowles - a senior software engineer with 8+ years of frontend architecture experience.
 
 Live at **[jknowlesdev.com](https://jknowlesdev.com)**.
 
 ## What this portfolio demonstrates
 
-The portfolio itself is the demo. It showcases a multi-tenant SaaS (Software as a Service) pattern: one codebase serving many tenants, each with their own branding, features, and content driven by per-tenant configuration. I was a primary developer and maintainer of a K-12 ed-tech product built on this pattern, serving nearly two dozen client publishers through per-tenant customization. See [my resume](https://jknowlesdev.com/resume) for more details.
+The portfolio itself is the demo. It showcases a multi-tenant SaaS (Software as a Service) pattern: one codebase serving many tenants, each with their own branding, features, and content driven by per-tenant configuration. I was a primary developer and maintainer of a K-12 EdTech product built on this pattern, serving nearly two dozen client publishers through per-tenant customization. See [my resume](https://jknowlesdev.com/resume) for more details.
 
 ### Key principles
 
@@ -25,7 +25,7 @@ The portfolio ships four themes (default, newspaper, terminal, custom) built on 
 - **Config-driven widget order:** per-theme widget ordering via a JSON array, gated by a feature flag so opted-out themes keep the default order.
 - **Interactive customization mode:** UI panel to toggle theme widgets on/off at runtime and see the config-driven architecture in action.
 - **Auth and admin surface:** login-gated UI for editing theme JSON through a web app, demonstrating the "admin per tenant" pattern the architecture is built for.
-- **Data:** PostgreSQL (Neon) and Drizzle ORM - infrastructure ready (schema, migrations, and seed script wired up in `package.json`); utilization and REST communication with the front-end coming soon.
+- **Data:** PostgreSQL (Neon) and Drizzle ORM - infrastructure ready (schema, migrations, and seed script wired up in `package.json`); utilization and REST communication with the frontend coming soon.
 - **REST API:** `/api/themes` and `/api/themes/[id]` endpoints exposing themes as a first-class resource for external consumers.
 - **SEO metadata:** Open Graph tags, canonical URLs, robots.txt, sitemap.xml.
 - **Multi-language support:** extending each theme's key-value phrasing to support multiple languages, so users can choose their language within any theme.
