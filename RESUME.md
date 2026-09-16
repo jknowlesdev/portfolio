@@ -9,11 +9,11 @@ Worcester, MA area (open to remote) · jknowlesdev@gmail.com · (774) 321-0974 �
 **EvoText (Content2Classroom / C2C)**, Carlisle, MA (Remote) | *Software Engineer*  
 JUNE 2021 - PRESENT
 
-- Shaped and evolved C2C's extensible configuration-driven multi-tenant SaaS pattern: themes for branding, i18n for text, and feature flags for widgets. Currently powering over 20 publisher clients in K-12 EdTech, collectively reaching millions of users.
+- Shaped and evolved C2C's multi-tenant SaaS pattern with React and MobX, where each tenant is defined by a config-driven theme: CSS variables for branding, i18n for text, and feature flags for functionality. Powering over 20 EdTech publishers, collectively reaching millions of users.
 - Integrated the frontend for SSO (Google Classroom, Clever, ClassLink) and LTI (Canvas) into the multi-tenant platform, enabling per-publisher configuration without code changes.
 - Consolidated per-tenant standalone repositories into a single dynamic codebase, cutting new custom theme delivery from roughly 10 days down to 2.
 - Modernized the legacy lesson-delivery player from jQuery and Kendo UI to React with MobX, improving accessibility, modularity, state management, and long-term maintainability.
-- Built WCAG 2.2 AA compliance into every new feature from the start, avoiding failed audits and hours of remediation.
+- Built WCAG 2.2 AA compliance into every new feature from the start, preventing failed audits and hours of remediation, making accessibility part of the implementation itself.
 
 ---
 
@@ -31,7 +31,7 @@ Personal interactive portfolio demonstrating the following capabilities:
 
 - **Configuration-driven themes:** Adapted C2C's multi-tenant pattern (CSS variables, i18n with next-intl, feature flags), demonstrating cross-framework portability while sharpening full-stack skills with the latest technologies.
 - **Full-stack scaffold:** Scaffolded a deployable full-stack backend on Vercel with Next.js 16, TypeScript, Zod, PostgreSQL, and Drizzle ORM.
-- **Privacy-first, accessibility-first:** No cookies, no third-party tracking, and every component built to WCAG 2.2 AA at implementation.
+- **Privacy-first, accessibility-first:** No cookies, no third-party tracking, and every component implemented with WCAG 2.2 AA compliance.
 
 ## EDUCATION
 
@@ -51,9 +51,12 @@ JANUARY 2018 - SEPTEMBER 2018
 ## TECHNOLOGIES
 
 - **Languages** · JavaScript, TypeScript, Java
-- **Frontend** · React, MobX, Angular, Next.js, RxJS, Tailwind CSS
-- **Backend** · Node.js, NestJS, Spring Boot, REST APIs
-- **Data** · PostgreSQL, MongoDB, SQL, Drizzle ORM
-- **Validation** · Zod
+- **Styling** · HTML, CSS, LESS, SCSS, Tailwind CSS
+- **Frontend** · React, MobX, Next.js, Angular, RxJS
+- **Legacy Frontend** · jQuery, AngularJS, Kendo UI
+- **Backend** · Node.js, Spring Boot, REST APIs, JSON
+- **Data** · PostgreSQL, SQL, Drizzle ORM
+- **Validation / i18n** · Zod, i18n
+- **Build** · Vite, CRACO, Rollup
 - **Deployment** · Docker, AWS, Vercel
-- **Source Control** · Git, GitHub
+- **Source Control** · Git, GitHub, BitBucket
