@@ -7,7 +7,7 @@ Worcester, MA area (open to remote) · jknowlesdev@gmail.com · (774) 321-0974 �
 ## EXPERIENCE
 
 **EvoText (Content2Classroom / C2C)**, Carlisle, MA (Remote) | *Software Engineer*  
-JUNE 2021 - PRESENT
+JUNE 2021 - PRESENT 
 
 - Shaped and evolved C2C's multi-tenant SaaS pattern with React and MobX, where each tenant is defined by a config-driven theme: CSS variables for branding, i18n for text, and feature flags for functionality. Powering over 20 EdTech publishers, collectively reaching millions of users.
 - Integrated the frontend for SSO (Google Classroom, Clever, ClassLink) and LTI (Canvas) into the multi-tenant platform, enabling per-publisher configuration without code changes.
