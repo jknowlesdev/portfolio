@@ -10,14 +10,14 @@ Senior Software Engineer approaching 8 years in React frontend architecture, mul
 
 ## **Work Experience**
 
-### **Software Engineer, EvoText (Content2Classroom) | Remote	Jun 2021 – Present**
+### Software Engineer, EvoText (Content2Classroom) | Remote | Jun 2021 - Present
 
 * Shaped and evolved Content2Classroom's multi-tenant SaaS design system with React and MobX, where each tenant is defined by a config-driven theme: CSS variables for branding, i18n for text, and feature flags for functionality. Powering over 20 EdTech publishers, reaching millions of users.  
 * Accelerated product delivery by consolidating per-tenant standalone repositories into a single dynamic codebase, reducing custom theme delivery time from 10 days to 2\.  
 * Adopted AI-driven engineering with Claude Code, delegating scaffolding and boilerplate to keep manual focus on architecture, correctness, and AI output review.  
 * Modernized the legacy lesson-delivery player from jQuery to React with WCAG 2.2 AA accessibility built in at implementation, improving modularity and long-term maintainability.
 
-### **Software Engineer, Aveniros | Woburn, MA	Dec 2018 – Jun 2021**
+### **Software Engineer, Aveniros | Woburn, MA | Dec 2018 – Jun 2021**
 
 * Engineered the frontend of a Dockerized bilingual English and Arabic tablet portal using Angular, RxJS, and RTL layout for Egypt's national exam reform under a Pearson contract, supporting hundreds of thousands of concurrent students.  
 * Modernized legacy AngularJS and jQuery codebases to modern Angular with TypeScript integrated with Spring Boot via REST APIs, unlocking type safety and long-term maintainability.
@@ -39,4 +39,4 @@ Senior Software Engineer approaching 8 years in React frontend architecture, mul
 
 ## **Education**
 
-### **Bachelor of Science in Computer Science, Worcester State University 	2015 – 2018**
+**Bachelor of Science in Computer Science** | Worcester State University | *2015 – 2018*
