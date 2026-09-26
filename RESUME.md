@@ -1,62 +1,42 @@
-# JASON KNOWLES
+# **Jason Knowles**
 
-Versatile Senior Software Engineer focused on scalable frontend architecture and legacy stack modernization. Pursuing full-stack opportunities across the JavaScript and TypeScript ecosystem.
+Senior Software Engineer  
+[jknowlesdev@gmail.com](mailto:jknowlesdev@gmail.com)  
+[linkedin.com/in/jasonknowlesdev](http://linkedin.com/in/jasonknowlesdev) | [github.com/jknowlesdev](http://github.com/jknowlesdev) | [jknowlesdev.com](http://jknowlesdev.com)
 
-Worcester, MA area (open to remote) · jknowlesdev@gmail.com · (774) 321-0974 · github.com/jknowlesdev · jknowlesdev.com · linkedin.com/in/jknowlesdev
+## **Professional Summary**
 
-## EXPERIENCE
+Senior Software Engineer approaching 8 years in React frontend architecture, multi-tenant SaaS design systems, accessibility-first engineering, and AI-driven development. Framework-flexible across the JavaScript and TypeScript ecosystem; deep frontend expertise expanding into full-stack ownership.
 
-**EvoText (Content2Classroom / C2C)**, Carlisle, MA (Remote) | *Software Engineer*  
-JUNE 2021 - PRESENT 
+## **Work Experience**
 
-- Shaped and evolved C2C's multi-tenant SaaS pattern with React and MobX, where each tenant is defined by a config-driven theme: CSS variables for branding, i18n for text, and feature flags for functionality. Powering over 20 EdTech publishers, collectively reaching millions of users.
-- Integrated the frontend for SSO (Google Classroom, Clever, ClassLink) and LTI (Canvas) into the multi-tenant platform, enabling per-publisher configuration without code changes.
-- Consolidated per-tenant standalone repositories into a single dynamic codebase, cutting new custom theme delivery from roughly 10 days down to 2.
-- Modernized the legacy lesson-delivery player from jQuery and Kendo UI to React with MobX, improving accessibility, modularity, state management, and long-term maintainability.
-- Built WCAG 2.2 AA compliance into every new feature from the start, preventing failed audits and hours of remediation, making accessibility part of the implementation itself.
+### **Software Engineer, EvoText (Content2Classroom) | Remote	Jun 2021 – Present**
 
----
+* Shaped and evolved Content2Classroom's multi-tenant SaaS design system with React and MobX, where each tenant is defined by a config-driven theme: CSS variables for branding, i18n for text, and feature flags for functionality. Powering over 20 EdTech publishers, reaching millions of users.  
+* Accelerated product delivery by consolidating per-tenant standalone repositories into a single dynamic codebase, reducing custom theme delivery time from 10 days to 2\.  
+* Adopted AI-driven engineering with Claude Code, delegating scaffolding and boilerplate to keep manual focus on architecture, correctness, and AI output review.  
+* Modernized the legacy lesson-delivery player from jQuery to React with WCAG 2.2 AA accessibility built in at implementation, improving modularity and long-term maintainability.
 
-**Aveniros**, Woburn, MA | *Software Engineer*  
-DECEMBER 2018 - JUNE 2021
+### **Software Engineer, Aveniros | Woburn, MA	Dec 2018 – Jun 2021**
 
-- Engineered the frontend of a Dockerized bilingual English and Arabic tablet portal using Angular, RxJS, and RTL layout for Egypt's national exam reform under a Pearson contract, supporting hundreds of thousands of concurrent students.
-- Modernized legacy AngularJS and jQuery codebases to modern Angular with TypeScript integrated with Spring Boot via REST APIs, unlocking type safety and long-term maintainability.
+* Engineered the frontend of a Dockerized bilingual English and Arabic tablet portal using Angular, RxJS, and RTL layout for Egypt's national exam reform under a Pearson contract, supporting hundreds of thousands of concurrent students.  
+* Modernized legacy AngularJS and jQuery codebases to modern Angular with TypeScript integrated with Spring Boot via REST APIs, unlocking type safety and long-term maintainability.
 
-## PERSONAL PROJECT
+## **Projects**
 
-**jknowlesdev.com** | *Interactive Portfolio & Demo* | Live on Vercel, 2026
+### **Portfolio | jknowlesdev.com**	
 
-Personal interactive portfolio demonstrating the following capabilities:
+* Built to keep current with modern tools, a configuration-driven multi-theme design system on a scaffolded backend, ready to scale.  
+* Full-stack build on Next.js, TypeScript, and Tailwind CSS with type-safe data via Drizzle ORM, Zod, and Neon PostgreSQL, AI-driven with Claude Code as copilot for setup and CI/CD, each commit verified and deployed to Vercel.
 
-- **Configuration-driven themes:** Adapted C2C's multi-tenant pattern (CSS variables, i18n with next-intl, feature flags), demonstrating cross-framework portability while sharpening full-stack skills with the latest technologies.
-- **Full-stack scaffold:** Scaffolded a deployable full-stack backend on Vercel with Next.js 16, TypeScript, Zod, PostgreSQL, and Drizzle ORM.
-- **Privacy-first, accessibility-first:** No cookies, no third-party tracking, and every component implemented with WCAG 2.2 AA compliance.
+## **Skills**
 
-## EDUCATION
+**Languages & Core**: JavaScript, TypeScript, HTML, CSS, SQL, Java  
+**Frontend**: React, Next.js, Angular, Tailwind CSS, Design Systems, Accessibility, Legacy Modernization  
+**Backend & Infrastructure**: Node.js, Spring Boot, REST APIs, JWT, Docker, AWS, Vercel, Git  
+**Quality & Testing**: Code review, Accessibility testing, Cross-browser verification, Manual QA, Chrome and Axe DevTools, NVDA, VoiceOver, ESLint, CI/CD  
+**AI Tooling**: Claude Code, GitHub Copilot, AI-driven development
 
-**Worcester State University**, Worcester, MA | *Bachelor of Science in Computer Science*  
-2015 - 2018
+## **Education**
 
-Concentration in Software Development. Dean's List 2015 to 2018.
-
----
-
-**Ampath Informatics** (Remote) | *Software Developer Intern (Computer Science Capstone)*  
-JANUARY 2018 - SEPTEMBER 2018
-
-- Led classmates to build an offline-first proof-of-concept for Ampath's medical record system (powered by OpenMRS) using Angular 2+, RxJS, PouchDB, and CryptoJS, proving medical records accessible in the field without continuous connectivity.
-- Gained hands-on experience with REST APIs, component-based architecture, state management, and agile process through contributions to a live open-source codebase.
-
-## TECHNOLOGIES
-
-- **Languages** · JavaScript, TypeScript, Java
-- **Styling** · HTML, CSS, LESS, SCSS, Tailwind CSS
-- **Frontend** · React, MobX, Next.js, Angular, RxJS
-- **Legacy Frontend** · jQuery, AngularJS, Kendo UI
-- **Backend** · Node.js, Spring Boot, REST APIs, JSON
-- **Data** · PostgreSQL, SQL, Drizzle ORM
-- **Validation / i18n** · Zod, i18n
-- **Build** · Vite, CRACO, Rollup
-- **Deployment** · Docker, AWS, Vercel
-- **Source Control** · Git, GitHub, BitBucket
+### **Bachelor of Science in Computer Science, Worcester State University 	2015 – 2018**
