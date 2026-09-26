@@ -6,7 +6,7 @@ Senior Software Engineer
 
 ## **Professional Summary**
 
-Senior Software Engineer approaching 8 years in React frontend architecture, multi-tenant SaaS design systems, accessibility-first engineering, and AI-driven development. Framework-flexible across the JavaScript and TypeScript ecosystem; deep frontend expertise expanding into full-stack ownership.
+Senior Software Engineer approaching 8 years of experience, specializing in React frontend architecture, multi-tenant SaaS, accessibility-first engineering, and AI-driven development. Framework-flexible across the JavaScript and TypeScript ecosystem; deep frontend expertise expanding into full-stack ownership.
 
 ## **Work Experience**
 
