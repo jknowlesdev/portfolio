@@ -51,7 +51,7 @@ export function removeStyleVar(
  * clearStyleOverrides() can undo them. Module-scope so both functions
  * share state.
  */
-let lastAppliedVars = new Set<string>();
+const lastAppliedVars = new Set<string>();
 
 /**
  * Remove all CSS custom properties that this module has previously applied.
