@@ -42,6 +42,19 @@ Checked so far:
 
 Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (`type(scope): what changed`). Earlier history uses an older `task:` style; Phase 2 rewrites it, so the full history follows one convention. AI involvement is documented here and in pull request descriptions, not in commit trailers.
 
+Scopes follow how the code is organized. A scope is optional when a change spans several areas.
+
+| Scope | Covers |
+|---|---|
+| `theme` | The theme system: schema, defaults, loader, provider, and the theme JSON files |
+| `widgets` | The home page widgets in `lib/widgets/` |
+| `nav` | The site navigation and the theme switcher |
+| `layout` | Page layout and spacing |
+| `styles` | Global styles and shared CSS |
+| `markdown` | Rendered Markdown pages, such as `/readme` |
+| `db` | The database schema, migrations, and seed script |
+| `claude` | Claude Code's project settings in `.claude/` |
+
 ## What comes next
 
 - **Phase 3:** automated tests (Vitest, Playwright, and axe) and a CI gate that agents pass the same way I do
