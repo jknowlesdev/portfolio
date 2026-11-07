@@ -3,7 +3,8 @@ import path from 'node:path';
 
 import { ExternalLink as ExternalLinkIcon } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; /* GitHub Flavored Markdown plugin for ReactMarkdown */
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 
 import { ExternalLink } from '@/lib/components/ExternalLink';
 
@@ -21,6 +22,12 @@ type MarkdownPageProps = {
  * MarkdownPage - shared server component that renders a repo-root markdown
  * file as a styled page. Header shows title, description, and an external
  * "view on GitHub" link; article contains the parsed markdown content.
+ *
+ * The following plugins match GitHub's rendering:
+ * - remark-gfm: GitHub Flavored Markdown, such as tables and task lists
+ * - rehype-slug: GitHub's anchor id on each heading; allows certain markdown
+ *   features (such as table-of-contents links) to work properly with the
+ *   react-markdown render
  *
  * The file ships with the Vercel deploy - fs.readFile at request time returns
  * the same content as the GitHub raw URL, no network fetch needed.
@@ -48,7 +55,7 @@ export async function MarkdownPage({
             </ExternalLink>
           </header>
           <article className='markdown-page-content'>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSlug]}>{content}</ReactMarkdown>
           </article>
         </div>
       </div>
