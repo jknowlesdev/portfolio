@@ -2,7 +2,7 @@
 
 What is done, what is in progress, and what comes next, with each step checked off as it lands. The [Concept](concept.md) describes the finished design these phases build.
 
-**Structure:** development of this portfolio runs in phases, in order. Each phase is tagged as a release in this repo once all of its steps are checked off. A number such as 4.1 is part 1 of Phase 4. Each part is completed before the next begins, so development can pause after any part without leaving the site half-done.
+**Structure:** development of this portfolio runs in phases, in order. Each phase is tagged as a release in this repo once all of its steps are checked off, numbered by phase: Phase 2 tagged the launch as `v0.1.0` and the site before this roadmap as `v0.2.0`, and each later phase ships as the next version (Phase 3 as `v0.3.0`). A number such as 4.1 is part 1 of Phase 4. Each part is completed before the next begins, so development can pause after any part without leaving the site half-done.
 
 ## Done
 
@@ -29,15 +29,15 @@ How it works today: [Architecture Overview](architecture/overview.md).
 
 Details: [Development Process](development/process.md).
 
-## Next
-
 ### Phase 2: Clean history
 
 - [x] Remove the resume page and its links
-- [ ] Rewrite the history to Conventional Commits, with a dry run in a fresh clone that confirms every file and date matches
-- [ ] Tag the launch and the site before this roadmap as the first releases, with GitHub Releases
+- [x] Rewrite the history to Conventional Commits, with a dry run in a fresh clone that confirms every file and date matches
+- [x] Tag the launch and the site before this roadmap as the first releases, with GitHub Releases
 - [ ] Protect `main` with a ruleset, and enforce the commit format with a hook
 - [ ] Add a `LICENSE` and `.env.example`
+
+## Next
 
 ### Phase 3: Tests and CI
 

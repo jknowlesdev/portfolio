@@ -42,6 +42,8 @@ Checked so far:
 
 Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (`type(scope): what changed`). Earlier history uses an older `task:` style; Phase 2 rewrites it, so the full history follows one convention. AI involvement is documented here and in pull request descriptions, not in commit trailers.
 
+Releases are git tags with GitHub Releases, one per finished phase: `v0.1.0` is the launch, and `v0.2.0` is the site before the roadmap.
+
 Scopes follow how the code is organized. A scope is optional when a change spans several areas.
 
 | Scope | Covers |
