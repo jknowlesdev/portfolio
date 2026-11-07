@@ -64,6 +64,13 @@ html.Portfolio body.portfolio-body {
           margin-bottom: 0.25rem;
         }
 
+        /* No extra space after a nested list, so it does not push the next item down. */
+        li > ul,
+        li > ol {
+          margin-top: 0.25rem;
+          margin-bottom: 0;
+        }
+
         strong {
           font-weight: var(--font-weight-semibold);
         }
