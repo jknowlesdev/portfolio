@@ -1,50 +1,61 @@
-# jknowlesdev.com
+# Jason Knowles
 
-Personal portfolio and interactive demo site for Jason Knowles - a senior software engineer with 8+ years of frontend architecture experience.
+Senior software engineer specializing in frontend architecture, branching into full-stack ownership. This repo is the source of **[jknowlesdev.com](https://jknowlesdev.com)** and its documentation.
 
-Live at **[jknowlesdev.com](https://jknowlesdev.com)**.
+## Contents
 
-## What this portfolio demonstrates
+- [About Me](#about-me)
+  - [Highlights](#highlights)
+  - [Engineering Approach](#engineering-approach)
+- [About This Portfolio](#about-this-portfolio)
+- [Documentation](#documentation)
+- [Roadmap](#roadmap)
+- [Getting Started](#getting-started)
+- [Contact](#contact)
 
-The portfolio itself is the demo. It showcases a multi-tenant SaaS (Software as a Service) pattern: one codebase serving many tenants, each with their own branding, features, and content driven by per-tenant configuration. I was a primary developer and maintainer of a K-12 EdTech product built on this pattern, serving nearly two dozen client publishers through per-tenant customization. See [my resume](https://jknowlesdev.com/resume) for more details.
+## About Me
 
-### Key principles
+Software engineer with nearly 8 years of experience, specializing in React frontend architecture, configurable multi-tenant SaaS, AI-augmented engineering, and accessibility-first UI. Framework-flexible across the JavaScript and TypeScript ecosystem; deep frontend expertise, branching into full-stack ownership.
 
-- **Config-driven themes.** Each theme is a self-contained JSON, CSS, and translations bundle. Add a new theme by dropping in a new file - no per-theme code, no forks.
-- **Flag-driven widgets.** Widgets opt into themes via boolean flags in the theme config. Any theme can enable any widget; every widget is theme-agnostic.
-- **Reusable and adaptable.** Each widget is written once and adapts to any theme. Configuration drives customization, visibility, and behavior. This eliminates the need to copy-paste features across clients.
-- **Accessible by default.** Every widget is planned and built to pass a traditional accessibility audit as part of initial implementation, rather than requiring emergency retrofits when gaps surface during a later audit.
-- **Privacy-first.** No cookies or tracking that requires user consent.
+### Highlights
 
-### Current implementation
+- Shaped and evolved the React architecture of a multi-tenant K-12 platform for 20+ EdTech publishers
+- Consolidated per-tenant repositories into a shared multi-tenant codebase, reducing custom theme delivery from 10 days to 2
+- Migrated 20+ interactive question types from jQuery to React, rebuilding each to be modular and accessible
+- Engineered the frontend of a bilingual English and Arabic tablet exam portal in Angular and RxJS, supporting hundreds of thousands of concurrent students
 
-The portfolio ships four themes (default, newspaper, terminal, custom) built on a shared widget library. Home-page widgets present my identity and career highlights - name, role, tagline, bio, plus a card grid summarizing the engineering principles behind this project. Each widget is theme-agnostic and gated by a boolean flag in the theme's JSON, so themes opt widgets in by setting flags to true. Dedicated `/resume` and `/readme` routes render RESUME.md (career history, experience, and skills) and README.md (this file) directly via react-markdown. Theme resolution is per-request via URL query param: `?theme=X` is intercepted by a proxy, converted to a request header, and utilized to load the matching JSON server-side, which then merges with defaults before rendering.
+### Engineering Approach
 
-### Coming soon
+- **AI-augmented engineering, not vibe coding.** I direct AI agents daily through a layered framework of Markdown conventions I define, from general rules down to project-specific patterns. The agent maps out the work for my approval before it writes code, and I review and refine each change until I can stand behind it as my own work.
+- **Accessibility at implementation.** I build every new feature to WCAG 2.2 AA at implementation, not as a retrofit, and check it with NVDA, VoiceOver, and Axe DevTools.
+- **Guardrails that are enforced, not just written.** In this repo, permission rules and a guard hook stop the agent from committing without my approval, pushing, rewriting history, or reading secrets.
 
-- **Config-driven widget order:** per-theme widget ordering via a JSON array, gated by a feature flag so opted-out themes keep the default order.
-- **Interactive customization mode:** UI panel to toggle theme widgets on/off at runtime and see the config-driven architecture in action.
-- **Auth and admin surface:** login-gated UI for editing theme JSON through a web app, demonstrating the "admin per tenant" pattern the architecture is built for.
-- **Data:** PostgreSQL (Neon) and Drizzle ORM - infrastructure ready (schema, migrations, and seed script wired up in `package.json`); utilization and REST communication with the frontend coming soon.
-- **REST API:** `/api/themes` and `/api/themes/[id]` endpoints exposing themes as a first-class resource for external consumers.
-- **SEO metadata:** Open Graph tags, canonical URLs, robots.txt, sitemap.xml.
-- **Multi-language support:** extending each theme's key-value phrasing to support multiple languages, so users can choose their language within any theme.
-- **And more:** additional widgets, themes, and features as this portfolio evolves.
+The details are in the [Development Process](https://github.com/jknowlesdev/portfolio/blob/main/docs/development/process.md).
 
-## Tech stack
+## About This Portfolio
 
-- **Framework:** Next.js 16 (App Router, Turbopack) with React 19
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4 with per-theme CSS custom properties
-- **Icons:** lucide-react
-- **i18n:** next-intl (each theme has its own key-value phrasing, currently English for all themes)
-- **Validation:** Zod (theme schema)
-- **Markdown:** react-markdown and remark-gfm (for the /resume and /readme routes)
-- **Deployment:** Vercel
+**Today:** a configuration-driven Next.js site. Each theme is a JSON file that sets the colors, fonts, wording, and which widgets appear, with no per-theme code. Four themes and eight widgets show the pattern.
 
-## Getting started
+**The concept:** a site that documents, tests, and demonstrates itself. The docs become the main content, a Customize panel lets visitors operate the configuration the docs describe, and a Dev view shows the checks running live. The full design is in the [Concept](https://github.com/jknowlesdev/portfolio/blob/main/docs/concept.md).
 
-Requires Node 20+ and pnpm.
+## Documentation
+
+- [Architecture Overview](https://github.com/jknowlesdev/portfolio/blob/main/docs/architecture/overview.md) - the request flow from URL to page, themes, widgets, styling, routes, and the project structure
+- [Development Process](https://github.com/jknowlesdev/portfolio/blob/main/docs/development/process.md) - how the work runs, the guardrails, and how they are checked
+
+**Tech stack:** Next.js 16 (App Router) with React 19, TypeScript, Tailwind CSS v4, next-intl, Zod, and react-markdown, deployed on Vercel. Neon PostgreSQL with Drizzle ORM is set up for features that will need it.
+
+## Roadmap
+
+The [Roadmap](https://github.com/jknowlesdev/portfolio/blob/main/docs/roadmap.md) lists every phase with a checklist. In short:
+
+- **Next:** a clean Conventional Commits history; automated tests and CI with Vitest, Playwright, and axe; a documented journal with an RSS feed; one validated configuration schema; SEO; and a full docs guide
+- **Later:** a Customize panel and a Dev view for visitors
+- **Direction:** full stack as features need it, and a separate monorepo for multi-framework work, with Angular alongside React, NestJS services, event-driven communication, and micro-frontends
+
+## Getting Started
+
+Requires Node 24 (pinned in `.nvmrc`) and pnpm.
 
 ```bash
 git clone https://github.com/jknowlesdev/portfolio.git
@@ -54,22 +65,6 @@ pnpm dev
 ```
 
 Open [http://localhost:3030](http://localhost:3030).
-
-## Repository layout
-
-A quick tour of the main directories. Note: This is an example of the structure and will be added to over time (as the project evolves).
-
-```
-app/               Next.js App Router routes (page.tsx, layout.tsx, /resume, /readme, ...)
-css/               Colocated component and widget styles
-lib/
-  components/        Shared UI primitives
-  theme/             Theme system (schema, defaults, provider, loader)
-  widgets/           Flag-driven portfolio widgets
-  urls.ts            Shared URL and route constants
-i18n/              next-intl request config
-content/           Theme JSON overrides
-```
 
 ## Contact
 
