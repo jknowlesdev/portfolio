@@ -1,0 +1,30 @@
+html.Portfolio body.portfolio-body {
+  .DocsPage {
+    .docs-page-container {
+      .docs-page-header {
+        .docs-page-title {
+          font-size: var(--text-heading-1);
+          font-weight: var(--font-weight-bold);
+          margin-bottom: 0.5rem;
+        }
+
+        .docs-page-description {
+          color: var(--color-muted);
+        }
+      }
+
+      .docs-page-list {
+        .docs-page-item {
+          .docs-page-link {
+            font-weight: var(--font-weight-semibold);
+          }
+
+          .docs-page-item-description {
+            color: var(--color-muted);
+            margin-top: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+}

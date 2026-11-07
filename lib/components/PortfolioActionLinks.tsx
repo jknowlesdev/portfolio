@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl';
 import { ExternalLink } from '@/lib/components/ExternalLink';
 import { ThemeSwitcher } from '@/lib/components/ThemeSwitcher';
 import type { ThemeMetadata } from '@/lib/theme/theme.zod';
-import { GITHUB_URL, ROUTE_HOME, ROUTE_README, ROUTE_RESUME } from '@/lib/urls';
+import { GITHUB_URL, ROUTE_DOCS, ROUTE_HOME, ROUTE_README } from '@/lib/urls';
 
 import '@/css/PortfolioActionLinks.css';
 
@@ -22,7 +22,7 @@ type PortfolioActionLinksProps = {
 };
 
 /**
- * Shared action links nav (e.g. Home, Resume, README, GitHub).
+ * Shared action links nav (e.g. Home, About, Docs, GitHub).
  */
 export function PortfolioActionLinks({ themes }: PortfolioActionLinksProps) {
   const tAria = useTranslations('Aria');
@@ -41,7 +41,7 @@ export function PortfolioActionLinks({ themes }: PortfolioActionLinksProps) {
   };
 
   // Preserve query params (e.g. ?theme=newspaper) across internal navigation
-  // so the active theme survives clicking Home/Resume/README links.
+  // so the active theme survives clicking Home/About/Docs links.
   const withQuery = (route: string) => {
     const query = searchParams.toString();
     return query ? `${route}?${query}` : route;
@@ -60,14 +60,14 @@ export function PortfolioActionLinks({ themes }: PortfolioActionLinksProps) {
             {tIntro('homeLabel')}
           </Link>
           {divider}
-          <Link href={withQuery(ROUTE_RESUME)} className={linkClass(ROUTE_RESUME)} aria-current={ariaCurrent(ROUTE_RESUME)}>
-            <FileTextIcon className='icon-md' />
-            {tIntro('resumeLabel')}
-          </Link>
-          {divider}
           <Link href={withQuery(ROUTE_README)} className={linkClass(ROUTE_README)} aria-current={ariaCurrent(ROUTE_README)}>
             <BookOpenIcon className='icon-md' />
             {tIntro('readmeLabel')}
+          </Link>
+          {divider}
+          <Link href={withQuery(ROUTE_DOCS)} className={linkClass(ROUTE_DOCS)} aria-current={ariaCurrent(ROUTE_DOCS)}>
+            <FileTextIcon className='icon-md' />
+            {tIntro('docsLabel')}
           </Link>
           {divider}
           <ExternalLink href={GITHUB_URL} className='icon-link'>
