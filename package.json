@@ -14,23 +14,23 @@
     "db:seed": "tsx --env-file=.env.local scripts/seed.ts"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.0.2",
+    "@neondatabase/serverless": "^1.1.0",
     "deepmerge": "^4.3.1",
     "drizzle-orm": "^0.45.2",
     "lucide-react": "^1.42.0",
-    "next": "16.3.3",
+    "next": "16.4.6",
     "next-intl": "^4.14.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-markdown": "^10.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
-    "zod": "^4.5.4"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@axe-core/react": "^4.13.0",
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^20.19.43",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
     "babel-plugin-react-compiler": "1.0.0",
@@ -42,5 +42,8 @@
     "tsx": "^4.23.13",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@11.24.0"
+  "engines": {
+    "node": "26.x"
+  },
+  "packageManager": "pnpm@12.18.0"
 }

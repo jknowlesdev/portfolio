@@ -6,3 +6,7 @@ allowBuilds:
   sharp: false
   unrs-resolver: false
   workerd: false
+overrides:
+  brace-expansion@>=4.0.0 <5.0.12: ^5.0.12
+  esbuild@<=0.24.2: ^0.25.0
+  minimatch@>=7.0.0 <11.0.1: ^11.0.1
