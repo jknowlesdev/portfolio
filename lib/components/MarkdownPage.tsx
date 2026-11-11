@@ -1,6 +1,3 @@
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
-
 import { ExternalLink as ExternalLinkIcon } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import rehypeSlug from 'rehype-slug';
@@ -11,7 +8,7 @@ import { ExternalLink } from '@/lib/components/ExternalLink';
 import '@/css/MarkdownPage.css';
 
 type MarkdownPageProps = {
-  filename: string;
+  content: string;
   title: string;
   description: string;
   githubUrl: string;
@@ -19,9 +16,9 @@ type MarkdownPageProps = {
 };
 
 /**
- * MarkdownPage - shared server component that renders a repo-root markdown
- * file as a styled page. Header shows title, description, and an external
- * "view on GitHub" link; article contains the parsed markdown content.
+ * MarkdownPage - shared server component that renders markdown content as a
+ * styled page. Header shows title, description, and an external "view on
+ * GitHub" link; article contains the parsed markdown content.
  *
  * The following plugins match GitHub's rendering:
  * - remark-gfm: GitHub Flavored Markdown, such as tables and task lists
@@ -29,19 +26,16 @@ type MarkdownPageProps = {
  *   features (such as table-of-contents links) to work properly with the
  *   react-markdown render
  *
- * The file ships with the Vercel deploy - fs.readFile at request time returns
- * the same content as the GitHub raw URL, no network fetch needed.
+ * Each page reads its own file and passes the content in, so the file path
+ * stays a literal the build can trace.
  */
-export async function MarkdownPage({
-  filename,
+export function MarkdownPage({
+  content,
   title,
   description,
   githubUrl,
   githubLabel,
 }: MarkdownPageProps) {
-  const filePath = path.join(process.cwd(), filename);
-  const content = await fs.readFile(filePath, 'utf-8');
-
   return (
     <main className='MarkdownPage flex-1'>
       <div className='markdown-page-container max-w-5xl mx-auto'>
